@@ -1,0 +1,493 @@
+#!/usr/bin/env bash
+
+################################################################################
+# seti-run - Submit a student's SETILab code to Slurm for building and running.
+# This script does NOT update a student on the leaderboard. It only runs the
+# student's solution.
+#
+# The script copies the student's C/H/Makefile code to the cluster. When the
+# student has their turn in the queue, their job has 2 steps:
+#   1. Build the code
+#   2. Run the built code
+# The final output from the student's code is returned as an output file.
+#
+#
+# Karl Hallsby 2024
+#
+################################################################################
+
+set -o noclobber
+set -o errexit
+set -o pipefail
+set -o nounset
+set +x
+# shopt -s nullglob
+# shopt -s failglob
+
+## Notes
+# A JOB submitted with sbatch can have multiple STEPS.
+# A STEP is an invocation of srun inside an sbatch and has TASKS inside it.
+# A TASK is the number of things to do.
+#
+# A shell script submitted with sbatch ($ sbatch ./toy-shell-script.sh) has
+# exactly one IMPLICIT step.
+#
+# There
+# --dependency=afterok:<prev-job-jobid>...
+# --kill-on-invalid-dep=yes
+
+#
+# Directory holding the called script
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+# Make Slurm binaries available and define "global" SETILab configuration values
+source "$SCRIPT_DIR/slurm-setup"
+
+# XXX: This expects that this script is one directory down from the project
+# root. So it assumes something like .../mysetilab/scripts/seti-run. That means
+# the base path should be .../mysetilab.
+# FIXME: Perhaps we should drop a .config or .env file in the root
+# which we can search for?
+SETI_BASE_PATH="$(dirname ${SCRIPT_DIR})"
+
+# TODO: Source setilab-config from ${SETI_BASE_PATH} so students can set and
+# forget their netid combo, team name, and secret key value?
+# FIXME: Sourcing student config should not echo anything when user does -h/--help.
+#source "${SETI_BASE_PATH}/setilab-config" || echo "Running without setilab-config"
+
+# Specify where the final output of the submission should go once the job is
+# done.
+SETI_OUT_DIR="${SETI_BASE_PATH}/seti-run-output/"
+
+# Path to the Bash script holding the job that is actually given to Slurm.
+SETI_RUN_SLURM_JOB="${SCRIPT_DIR}/${SETI_JOB_RUNNER_SCRIPT}"
+
+# Your friendly -h/--help message.
+# NOTE: This will NOT print if a student runs this script without any arguments!
+# Running without arguments is a valid way to use this script, as that will
+# submit a "test" run.
+function usage {
+    local me="$(basename "$(test -L "$0" && readlink "$0" || echo "$0")")"
+    echo "Usage: ${me} -n <netids> {--test | --eval} [EVAL_FLAGS]"
+    echo "Submit SETILab code to Slurm for building, running, potentially"
+    echo "updating the leaderboard and handing in your code."
+    echo "${me} will NOT update your score on the leaderboard by default!"
+    echo
+    echo "  -n, --netid <netids>    Your netids (netid1_netid2) for example. If"
+    echo "                            just one student in group, then just netid"
+    echo
+    echo "  --test <EVAL_FLAGS>     Test code quickly, but do not handin or update leaderboard"
+    echo
+    echo "  --eval <EVAL_FLAGS>     Submit, run, update leaderboard, and handin"
+    echo
+    echo " EVAL_FLAGS are required for evaluation (--eval) submission!"
+    echo " EVAL_FLAGS = -t <teamname> -k <keyfile> -a <alien_id>"
+    echo
+    echo "  -t, --team <teamname>   The team name that will appear on the SETI"
+    echo "                            leaderboard"
+    echo "  -k, --key <key>         The secret key provided by siggen"
+    echo "  -a, --alien <alien_id>  Identify which signal contains the alien."
+    echo "                            If sig-1.bin has aliens, use -a 1"
+    echo
+    echo "  -h, --help              display this help and exit"
+    echo "  -K, --keep              run your code and keep the built artifacts"
+    echo "  --check-wait            Attempt to predict when your job will be "
+    echo "                            scheduled to run"
+    echo
+}
+
+function missing_arg {
+    local missing_arg_msg="$1"
+    local me="$(basename "$(test -L "$0" && readlink "$0" || echo "$0")")"
+    echo "${me}: error: ${missing_arg_msg}"
+    echo
+    usage
+    exit 1
+}
+
+# Validate that any flags which are dependent on another are specified
+function validate_flags {
+    # Force users to pick a job type
+    if [[ -z "$SETI_JOB_TYPE" ]]; then
+	missing_arg "No job type. Specify --test or --eval"
+    fi
+
+    if [[ -z "$NETIDS" ]]; then
+	missing_arg "Missing NetID(s)"
+    fi
+
+    # You must provide all these args if you are going to handin or eval.
+    if [[ $SETI_HANDIN = true || $SETI_EVAL = true ]]; then
+	if [[ -z "$TEAMNAME" ]]; then
+	    missing_arg "No teamname provided"
+	fi
+	if [[ -z "$KEYFILE" ]]; then
+	    missing_arg "Missing keyfile"
+	fi
+	if [[ -z "$ALIEN_ID" ]]; then
+	    missing_arg "No alien ID provided"
+	fi
+    fi
+}
+
+# Print a small "startup message" so students know things are starting.
+function print_startup_msg {
+    printf "Submitting your SETILab code for "
+    if [[ $SETI_HANDIN = true && $SETI_EVAL = true ]]; then
+	echo "an evaluation run and handin! Congratulations!"
+    elif [[ $SETI_HANDIN = false && $SETI_EVAL = true ]]; then
+	echo "and evaluation run! Watch out leaderboard!"
+    elif [[ $SETI_HANDIN = false && $SETI_EVAL = false ]]; then
+	echo "a test run!"
+    else
+	printf "ERROR!\n"
+	echo "You may not give the TAs your handin without evaluating your code"
+	echo "\$SETI_HANDIN=$SETI_HANDIN and \$SETI_EVAL=$SETI_EVAL"
+	exit 1
+    fi
+}
+
+# Parse sbatch's output and return the job ID for the job we just submitted.
+# We get the ID of the job we just submitted from sbatch's output string by
+# deleting (-d) anything non-digit like from the output.
+# Args: Passed directly to squeue
+function sbatch_job_id {
+    local sbatch_output="$1"
+    echo "$(tr -cd '[:digit:]' <<< $sbatch_output)"
+}
+
+# Generate a fully-qualified (absolute) path to a temporary (randomly-named)
+# hidden directory in the base of the SETILab project.
+# Arg 1: Directory where the hidden directory should be located.
+function gen_hidden_dir {
+    local temp_dir_base="$1"
+    # NOTE: --dry-run is only safe because we are inside the student's
+    # directory. This is a unique case because in the normal case where mktemp
+    # creates something in $TMPDIR, there is a very real possibility that there
+    # will be a TOCTOU conflict/"attack". But student directories are only
+    # writable by that student, so we should be safe enough.
+    local temp_dir=$(mktemp -d --tmpdir="${temp_dir_base}" --dry-run)
+    local dir_base="$(dirname "$temp_dir")"
+    local dir_name="$(basename "$temp_dir")"
+    echo "${dir_base}/.${dir_name}"
+}
+
+
+# Build a directory containing everything needed for a submission to Slurm
+# and/or handin.
+# Arg 1: The NAME of the directory to make the submission for.
+function make_submission_dir {
+    local submission_dir="$1"
+    mkdir -p "$submission_dir"
+
+    local src_dir="${SETI_BASE_PATH}/"
+
+    # Clean the source directory before submitting
+    # Perhaps run make clean before we build the submission directory to prevent
+    # copying binaries around.
+    pushd "${src_dir}" > /dev/null
+    make clean > /dev/null
+    popd > /dev/null
+
+    # This is the same code-copying that the original seti-handin script did, so
+    # it should be good enough for us.
+    # NOTE: We cannot single- nor double-quote the source of the copies, because
+    # that would escape Bash's file globbing, which would copy the file with the
+    # name *.c instead of all files ending in .c.
+    # FIXME: Make a "submission building" script/make target?
+    cp ${src_dir}/*.c "$submission_dir/"
+    cp ${src_dir}/*.h "$submission_dir/"
+    cp ${src_dir}/Makefile* "$submission_dir/"
+    cp "${SETI_RUN_SLURM_JOB}" "$submission_dir/"
+}
+
+# Remove the hidden submission directory. This function should NOT be called in
+# this script during normal execution! It should only be used in exceptional
+# cases.
+function cleanup_submission_dir {
+    echo "Removing submission directory"
+    rm -rf "${SUBMISSION_PATH}"
+}
+
+# Print a message to STDOUT saying that this seti-run script did not actually
+# submit a job to Slurm and that students should just use --eval instead.
+function no_eval_please_rerun {
+    echo "NOTE: Your code has not be scheduled for evaluation. Please re-run"
+    echo "this script with the --eval flag to only run your code and update"
+    echo "the leaderboard."
+}
+
+# Hand in the student's code, AFTER building a submission directory!
+# NOTE: make_submission_dir MUST be run before even attempting this function!
+# Arg 1: NetIDs of students/group
+# Arg 2: Path to hidden submission directory
+# Arg 3: Slurm job ID
+function handin_setilab {
+    local netids="$1"
+    local submission_dir="$2"
+    local job_id="$3"
+    local now=$(date --iso-8601='second')
+    local handin_tar="${netids}-setilab-handin-${job_id}-${now}.tar"
+
+    echo "Handing in SETILab"
+
+    pushd "$submission_dir" > /dev/null
+    # The exact same globbing as the original seti-handin script.
+    tar cf "../${handin_tar}" *.c *.h Makefile*
+    popd > /dev/null
+
+    # Ensure the handin directory actually exists before we attempt to do
+    # something potentially stupid.
+    if [[ ! -d "$SETI_HANDIN_DIR/$netids" ]]; then
+	echo "The handin directory \"$SETI_HANDIN_DIR/$netids\" is missing"
+	echo "Maybe your netids are incorrect??"
+	no_eval_please_rerun
+	exit 1
+    fi
+
+    # Attempt to copy the handin tarball to the handin directory. If it fails,
+    # then inform the student and then exit. We do the early exit so students
+    # still have access to the handin tarball, in case we need to set up a
+    # manual submission option.
+    cp "$handin_tar" "$SETI_HANDIN_DIR/$netids/"
+    if [[ $? -eq 0 ]]; then
+	echo "Successfully handed in your code!"
+    else
+	echo "Failed to hand in your code! Keeping handin tarball in case of"
+	echo "manual handin. Your tarball is ${handin_tar}."
+	no_eval_please_rerun
+	exit 1
+    fi
+
+    # Finally, clean up after ourselves.
+    rm "$handin_tar"
+}
+
+# Generate a new name (slightly more memorable) to give to the hidden submission
+# directory.
+# Arg 1: The path to the hidden submission directory.
+# Arg 2: The type of job the student submitted.
+function rename_submission_dir {
+    local hidden_submit_dir="$1"
+    local job_type="$2"
+    local dir_base="$(dirname "$hidden_submit_dir")"
+    local now=$(date --iso-8601='second')
+    # XXX: We do something kind of dangerous and embed an environment variable
+    # in this name. We attach $SLURM_JOB_ID to the name of the copied-out
+    # directory.
+    echo "${dir_base}/seti-run-\$SLURM_JOB_ID-${job_type}-${now}"
+}
+
+function output_config_var {
+    local var_name="$1"
+    local var_val="$2"
+    echo "declare -x $1=$2"
+}
+
+# Write a small source-able configuration file out for the Slurm worker to use.
+# Arg 1: The PATH to the hidden submission directory.
+function build_job_config_file {
+    local output="$1/$SETI_JOB_RUNNER_CONFIG"
+    local renamed_submission_path="$(rename_submission_dir "$SUBMISSION_PATH" "$SETI_JOB_TYPE")"
+
+    output_config_var 'KEEP_SLURM_WORK_DIR' "$KEEP_SUBMISSION_DIR" >> "$output"
+    echo "declare -x RENAMED_WORK_DIR_PATH=$renamed_submission_path" >> "$output"
+
+    output_config_var 'SETI_GOLDEN_DIR' "${SETI_GOLDEN_DIR}" >> "$output"
+    output_config_var 'SETI_HANDOUT_DIR' "${SETI_HANDOUT_DIR}" >> "$output"
+
+    # Both seti-perf and seti-eval are Perl scripts. seti-eval needs to know
+    # about some of the configurations made about the lab (e.g. location of
+    # $Setilab::METADIR). Set PERL5LIB so the "use Setilab;" in seti-eval
+    # resolves to a path we know about.
+    output_config_var 'PERL5LIB' "${SETI_GOLDEN_DIR}${PERL5LIB:+:$PERL5LIB}" >> "$output"
+    output_config_var 'SETI_EVAL_TO_RUN' "'${SETI_GOLDEN_DIR}/${SETI_EVAL_TO_RUN}'" >> "$output"
+}
+
+#
+# Command-line argument processing
+CLI_ARGS=$(getopt -o hKn:t:k:a: \
+		  --long help,keep,netid:,team:,key:,alien:,test,eval,check-wait \
+		  -n 'seti-run' -- "$@")
+eval set -- "$CLI_ARGS"
+
+KEEP_SUBMISSION_DIR=false
+SETI_HANDIN=false
+SETI_EVAL=false
+SETI_JOB_TYPE=""
+CHECK_WAIT_FLAG=''
+TEAMNAME=""
+NETIDS=""
+KEYFILE=""
+ALIEN_ID=""
+while true; do
+    case "$1" in
+	-h | --help )
+	    usage
+	    exit 0
+	    ;;
+	-K | --keep )
+	    KEEP_SUBMISSION_DIR=true
+	    shift
+	    ;;
+	--test )
+	    SETI_EVAL=false
+	    SETI_JOB_TYPE='test'
+	    shift
+	    ;;
+	--eval )
+	    SETI_HANDIN=true
+	    SETI_EVAL=true
+	    SETI_JOB_TYPE='eval'
+	    shift
+	    ;;
+	-n | --netid )
+	    NETIDS="$2"
+	    shift 2
+	    ;;
+	-t | --team )
+	    TEAMNAME="$2"
+	    shift 2
+	    ;;
+	-k | --key )
+	    KEYFILE="$2"
+	    shift 2
+	    ;;
+	-a | --alien )
+	    ALIEN_ID="$2"
+	    shift 2
+	    ;;
+	--check-wait )
+	    CHECK_WAIT_FLAG='--test-only'
+	    shift
+	    ;;
+	-- ) shift; break ;;
+	* ) break ;;
+    esac
+done
+
+validate_flags
+
+# Choose which evaluation script to run.
+# Default to the smaller seti-perf script.
+# NOTE: This MUST come after command-line parsing and validation because these
+# flags are expanded and given to seti-eval for evaluation and updating the
+# leaderboard.
+SETI_EVAL_TO_RUN='seti-perf'
+if [[ $SETI_HANDIN = true || $SETI_EVAL = true ]]; then
+    SETI_EVAL_TO_RUN="seti-eval -n \"$NETIDS\" -t \"$TEAMNAME\" -k $KEYFILE -a $ALIEN_ID"
+else
+    SETI_EVAL_TO_RUN='seti-perf'
+fi
+
+print_startup_msg
+
+#
+## Build the submission for a student.
+# The submission directory is a randomly-generated directory with a leading dot
+# (.) to hide it. This is what is given to the Slurm job for evaluation. All of
+# the machines we are using for SETILab have their home directories shared
+# between them, so leaving a job's input files in the student's home directory
+# means it will be shared to the job runner automatically. This also helps
+# prevent accidental sharing of code.
+
+# Make a temporary hidden directory for a submission
+SUBMISSION_PATH="$(gen_hidden_dir "$SETI_BASE_PATH")"
+make_submission_dir "$SUBMISSION_PATH"
+
+# Build a "configuration" file for the Slurm runner
+echo "Building configuration for runner"
+build_job_config_file "$SUBMISSION_PATH"
+
+if [[ -n $CHECK_WAIT_FLAG ]]; then
+    echo "Predicting start time of your job"
+fi
+
+# We use the submission directory we just built as the working directory, and
+# then clean up (remove) this hidden directory afterwards.
+
+SETI_JOB_NAME="setilab-${NETIDS}-${SETI_JOB_TYPE}"
+job_stdout_file="${SETI_OUT_DIR}/seti-run_%j-${SETI_JOB_TYPE}.out"
+
+# Disable exit-on-error so that we can catch a non-zero exit code out of sbatch.
+# sbatch's allocation step failing due to QoS limits being enforced means sbatch
+# will return a non-zero exit code, which we WANT to catch.
+set +o errexit
+
+# We forcibly set the output directory (with an ABSOLUTE path) to the SETI
+# output directory. If a relative path is used, the relative path for the output
+# is placed in the WORKING DIRECTORY of the JOB! Using --chdir sets the PWD of
+# the spawned job, which would place the output inside the hidden directory that
+# we will end up cleaning up afterwards, losing the output.
+sbatch_output=$(sbatch --chdir="$SUBMISSION_PATH" \
+		       $CHECK_WAIT_FLAG \
+		       --job-name="${SETI_JOB_NAME}" \
+		       --output="${job_stdout_file}" \
+		       "$SETI_RUN_SLURM_JOB" 2>&1)
+sbatch_rc=$?
+
+# Re-enable exit-on-error features of Bash.
+set -o errexit
+
+if [[ $sbatch_rc -eq $SLURM_SALLOC_ERROR_EXIT_CODE ]]; then
+    echo "Cannot submit your job!"
+    if grep "QOSMaxSubmitJobPerUserLimit" <<< $sbatch_output; then
+	      echo "You have too many seti-run jobs in the queue."
+	      echo "Please either wait or cancel some of your previous jobs."
+	      echo
+	      printf "You can use seti-look to find your jobs and seti-cancel to "
+          printf "cancel your jobs.\n\n"
+	      cleanup_submission_dir
+	      exit 1
+    else
+	      echo "Cannot figure out what went really wrong with sbatch from its"
+	      echo "output! Your submission directory has been kept at"
+	      echo "$SUBMISSION_PATH."
+          exit 1
+    fi
+elif [[ $sbatch_rc -ne 0 ]]; then
+    echo "An unknown error happened with sbatch!"
+    echo "Keeping submission at $SUBMISSION_PATH."
+    exit 1
+fi
+
+if [[ -n $CHECK_WAIT_FLAG ]]; then
+    echo "$sbatch_output"
+    cleanup_submission_dir
+    exit 0
+fi
+
+## Print some status information out to the student with job ID.
+
+# NOTE: We use SLURM_JOB_ID as the environment variable because it matches the
+# one we place in the path for students when they request to keep their build
+# artifacts.
+SLURM_JOB_ID=$(sbatch_job_id "$sbatch_output")
+printf "Your NEW job ID is %d\n" "$SLURM_JOB_ID"
+echo
+echo "Use $(dirname "${BASH_SOURCE[0]}")/seti-look to see where you are in the queue"
+
+
+# If the student wants to hand in their code, then we can just copy their Slurm
+# submission to the handin directory. This names the submission based on the
+# SLURM_JOB_ID, so we run it after attempting to submit to slurm
+if [[ $SETI_HANDIN = true ]]; then
+    handin_setilab "$NETIDS" "$SUBMISSION_PATH" "$SLURM_JOB_ID"
+fi
+# NOTE: We could include the configuration file from the build_job_config_file
+# step Right now, the job config is just for maintaining development-time
+# information between the submitter and the Slurm job that actually runs.
+
+
+if $KEEP_SUBMISSION_DIR; then
+    # XXX: This gross use of eval and echo is needed to make the output string
+    # of rename_submision_dir (which includes an environment variable in it)
+    # actually perform the substitution of the env-var in this script.
+    # It works fine without it inside the job's script because environment
+    # variables are expanded during a call to source.
+    renamed_output="$(eval echo $(rename_submission_dir $SUBMISSION_PATH $SETI_JOB_TYPE))"
+    echo "Submission $SLURM_JOB_ID will be kept at ${renamed_output}"
+    echo "This directory will appear when your job finishes."
+    echo
+fi
+

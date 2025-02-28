@@ -1,0 +1,159 @@
+#!/usr/bin/env bash
+
+################################################################################
+# slurm-submit - Build a student's code and run it INSIDE a Slurm job.
+#
+# This script assumes it is run by Slurm and is executed from inside a directory
+# that we built with the student's code that is hidden from the student.
+#
+# NOTE: We do NOT need to switch to Bash, since the shebang for this
+# script specifies Bash, regardless of what the submitter's preferred shell is.
+# This means it is safe to source configuration files in this script.
+#
+# Karl Hallsby 2024
+#
+################################################################################
+
+##
+## Directives to give to sbatch when submitting the job
+
+# Students get exclusive access to ONE of the amdahl machines when they get
+# assigned it by Slurm.
+#SBATCH --nodes=1
+#SBATCH --exclusive
+
+# Time limit for student submissions, including code compilation AND runtime!
+#SBATCH --time=0:20:00
+
+# Allow the student to use all memory on the amdahl machine they get assigned.
+#SBATCH --mem=0
+
+# Give a slightly more friendly name to the job.
+##SBATCH --job-name="SETILab"
+
+# Override the STDOUT file. Note that the sbatch command in seti-run handles
+# this for us, since we want to save that to a directory outside of the Slurm
+# worker.
+##SBATCH --output=slurm_%j-testslurm_seti-toy.out
+
+#
+# NOTE: SBATCH directives MUST come before any commands in the shell script.
+set -o noclobber
+set -o errexit
+set -o pipefail
+set -o nounset
+set +x
+
+# NOTE: We must export this environment variable, because seti-eval needs it
+# to find where the student's submission is.
+export SLURM_WORK_DIR="$(pwd)"
+
+# FIXME: I should not have to define the "config file" name in 2 places.
+# SOLUTION: slurm-submit is a template in the scripts dir and gets copied over
+# to the job dir by seti-run. Then we can do sed replacements on particular
+# things in the slurm-submit script.
+# source "%SETI_JOB_RUNNER_CONFIG%"
+# sed -i "s#%SETI_JOB_RUNNER_CONFIG%#$SETI_JOB_RUNNER_CONFIG#" ${SUBMISSION_DIR}/slurm-submit
+source ".seti_job_config"
+
+export SETI_GOLDEN_DIR
+export SETI_HANDOUT_DIR
+
+function now {
+    echo "$(date +%s)"
+}
+
+function time_since {
+    local then="$1"
+    local diff=$(($(now) - then))
+    echo "${diff}"
+}
+
+# Clean up the working directory (where the job was run).
+function clean_up {
+    # Leave ${workdir}
+    echo "Finished SETILab job."
+    cd "$SLURM_SUBMIT_DIR" || exit
+
+    # Use :-false to default to false if the env-var is not defined and/or unset
+    if ${KEEP_SLURM_WORK_DIR:-false}; then
+        echo "User specified keep build dir."
+        # NOTE: The empty string IS important to this expansion. We want to
+        # expand to "" if the renamed work dir is unset, which the -z can then
+        # catch and use to hit the true branch of the condition.
+        if [[ -z ${RENAMED_WORK_DIR_PATH:-""} ]]; then
+            echo "Renamed path not provided. Not renaming submission dir."
+        else
+            echo "Copy "$SLURM_WORK_DIR" to "$RENAMED_WORK_DIR_PATH""
+            cp -r "$SLURM_WORK_DIR" "$RENAMED_WORK_DIR_PATH"
+        fi
+    else
+        # Use :? to only remove if the variable is defined.
+        echo "Cleaning up $SLURM_WORK_DIR and exiting"
+        # Adding a sleep here fixes an issue where the rm errors with "Directory
+        # not empty". This may have something to do with srun finishing and the
+        # disks needing to sync? Who knows.
+        sleep 10
+        rm -rf "${SLURM_WORK_DIR:?}"
+    fi
+
+    exit
+}
+
+# Always call "clean_up" when script ends
+# This even executes on job failure/cancellation
+trap 'clean_up' EXIT
+
+#
+## The actual body of the script
+# Each instance of srun is a single step from within this job. This lets us
+# express the requirements for each step of the job. I am not sure how useful
+# this is for us, but one step at a time.
+# The key benefit of using srun for longer-running steps (in our case) is that
+# it will ensure the clean_up function is called when/if something goes wrong.
+
+echo "Printing environment information"
+printf "\$SLURM_WORK_DIR=%s\n" "$SLURM_WORK_DIR"
+printf "\$SLURM_SUBMIT_DIR=%s\n" "$SLURM_SUBMIT_DIR"
+printf "\$SETI_GOLDEN_DIR=%s\n" "$SETI_GOLDEN_DIR"
+printf "\$SETI_HANDOUT_DIR=%s\n" "$SETI_HANDOUT_DIR"
+printf "\$PERL5LIB=%s\n" "$PERL5LIB"
+printf "\$PWD=%s\n\n" "$(pwd)"
+export
+echo ""
+
+# You only need to use <cmd> || clean_up if the command is one that can fail so
+# spectacularly, the EXIT trap never actually fires. I don't know what could
+# cause such a thing to happen, but just so you know. You should NEVER need to
+# do "srun <cmd> || clean_up", as Slurm knows what to do if an srun step fails.
+
+printf "Building SETI code\n\n"
+BUILD_START="$(now)"
+srun make p_band_scan
+
+printf "\n"
+echo "Building your code took $(time_since "$BUILD_START") seconds"
+printf "\n"
+
+
+echo "Running student SETI code"
+printf "Running $SETI_EVAL_TO_RUN\n\n"
+
+RUN_START="$(now)"
+
+# $SETI_EVAL_TO_RUN should either be seti-perf or seti-eval.
+# If seti-eval is used, then all of its mandatory command-line arguments must be
+# provided as part of the sourced environment variable.
+# We need to use "bash -c ..." because $SET_EVAL_TO_RUN is a single string! If
+# you try the naive thing of "srun $SETI_EVAL_TO_RUN", then srun will fail to
+# exec on the $SETI_EVAL_TO_RUN program as it treats all the flags and the
+# spaces as part of the program's name, rather than as arguments. But we need
+# the variable to be a single string so Bash sees all the arguments. So bash -c
+# is the least bad of both worlds.
+bash -c "srun $SETI_EVAL_TO_RUN"
+
+printf "\n"
+echo "Running your code took $(time_since "$RUN_START") seconds"
+printf "\n"
+
+echo "Successfully Finished job $SLURM_JOB_ID at $(date)"

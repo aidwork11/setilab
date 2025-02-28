@@ -1,0 +1,49 @@
+#!/usr/bin/env perl
+
+$taversion = "/home/cs213lab/HANDOUT/p_band_scan";
+$sigfile = "/home/cs213lab/HANDOUT/alien_msg.sig";
+$myversion = "./p_band_scan";
+
+(-e $taversion) or die "TA code '$taversion' is missing\n";
+(-e $sigfile) or die "Signal file '$sigfile' is missing\n";
+(-e $myversion) or die "Your code '$myversion' is missing\n";
+
+#
+# add more bands, etc, to suit
+#
+#@bands = (8,16,32,64);
+#@orders = (4,8,16,32,64,128,256);
+#@procs = (1,2,4,8,16,24);
+@bands = (16);
+@orders = (32);
+@procs = (1,2,4,8);
+
+
+print "Comparing performance of \n";
+print "     your program: $myversion\n";
+print "  and our program: $taversion\n";
+print "for  bands: (",join(",",@bands),")\n";
+print "    orders: (",join(",",@orders),")\n";
+print "     procs: (",join(",",@procs),") [threads 1:1 with procs]\n\n";
+
+print "band\torder\tthread\tproc\tyourtime\tourtime\t\tperf\n";
+
+open(ALLMINE,">all_my_outputs.txt");
+open(ALLTA,">all_ta_outputs.txt");
+
+foreach $band (@bands) {
+   foreach $order (@orders) {
+      foreach $proc (@procs) {
+          $mytime = 0;
+          $tatime = 0;
+          $result = `$myversion bin $sigfile 400000 $order $band $proc $proc`;
+          if ( $result =~ /Analysis took\s+(\S+)\s+seconds/ ) { $mytime = $1; }
+          print ALLMINE $result;
+          $result = `$taversion bin $sigfile 400000 $order $band $proc $proc`;
+          if ( $result =~ /Analysis took\s+(\S+)\s+seconds/ ) { $tatime = $1; }
+          print ALLTA $result;
+          $rel = $mytime > 0 ? $tatime/$mytime : 0;
+          print join("\t",$band, $order, $proc, $proc, $mytime, $tatime, $rel), "\n";
+      }
+   }
+}

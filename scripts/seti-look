@@ -1,0 +1,97 @@
+#!/usr/bin/env bash
+
+################################################################################
+# seti-look - Find out where a student's jobs are.
+#
+# Karl Hallsby 2024
+#
+################################################################################
+
+set -o noclobber
+set -o errexit
+set -o pipefail
+set -o nounset
+set +x
+# shopt -s nullglob
+# shopt -s failglob
+
+#
+# Directory of the called script
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+# Make sure Slurm binaries are available
+source "$SCRIPT_DIR/slurm-setup"
+
+function usage {
+    local me="$(basename "$(test -L "$0" && readlink "$0" || echo "$0")")"
+    echo "Usage: ${me} [-h|--help]"
+    echo "Look at SETILab's Slurm queue, to see where your submission is among"
+    echo "all others in the class."
+    echo
+    echo "In order, you will see YOUR actively running jobs, then ALL of YOUR"
+    echo "jobs (running or queued/pending). Next, you will see ALL PENDING jobs"
+    echo "in the queue among ALL students. Last, you will see the entire state"
+    echo "of the queue, with ALL jobs (both actively running and queued/pending)"
+    echo "for all students."
+    echo
+    echo "  -h, --help              display this help and exit"
+    echo
+}
+
+#
+# Command-line argument processing
+CLI_ARGS=$(getopt -o h --long help -n 'seti-cancel' -- "$@")
+eval set -- "$CLI_ARGS"
+
+while true; do
+    case "$1" in
+	-h | --help )
+	    usage
+	    exit 0
+	    ;;
+	-- ) shift; break ;;
+	* ) break ;;
+    esac
+done
+
+if [[ $# -gt 1 ]]; then
+    me="$(basename "$(test -L "$0" && readlink "$0" || echo "$0")")"
+    echo "${me}: error: ${me} does not accept any arguments"
+    echo
+    usage
+    exit 1
+fi
+
+# 7  chars wide for job ID
+# 30 chars wide for job name
+# 10 chars wide for submitter's username
+# 4  chars wide for job's state
+# 8  chars wide for job's running time
+# Location of job (reason for current state)
+SQUEUE_FORMAT_STRING='%7i %30j %10u %4t %8M %R'
+
+#
+printf "YOUR RUNNING jobs:\n"
+squeue --me \
+       --states='R' \
+       --format="$SQUEUE_FORMAT_STRING" \
+       --sort='+i'
+printf "\n"
+
+printf "YOUR jobs (Running and/or PenDing) in the queue:\n"
+squeue --me \
+       --format="$SQUEUE_FORMAT_STRING" \
+       --sort='+i'
+printf "\n"
+
+printf "All PENDING jobs\n"
+squeue --states='PD' \
+       --format="$SQUEUE_FORMAT_STRING" \
+       --sort='+i'
+printf "\n"
+
+
+printf "ALL jobs (Running and/or PenDing) (for everyone)\n"
+squeue --format="$SQUEUE_FORMAT_STRING" \
+       --sort='+i'
+printf "\n"

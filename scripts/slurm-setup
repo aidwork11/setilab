@@ -1,0 +1,62 @@
+#-*- sh -*-
+
+################################################################################
+# slurm-setup - Share common configuration between all STUDENT-SIDE scripts.
+#
+# Environment variables that are intended to be used by the SETILab scripts
+# directly should be prepended with "SETI_". Say you wanted all SETI scripts to
+# have access to a "FOOBAR" environment variable, it should be named
+# "SETI_FOOBAR". Note that this is only a convention and we have no way of
+# actually enforcing this.
+#
+# Karl Hallsby 2024
+#
+################################################################################
+
+
+# Specify where Slurm stuff is
+# NOTE: SLURM_INSTALL_DIR may be changed in the future, depending on where NUIT
+# decides to move the Slurm install to.
+# NOTE: If Slurm ends up installed globally (i.e. binaries in /bin/ or /usr/bin/,
+# then both of these lines should be removed, since $PATH will already have the
+# Slurm programs.
+SLURM_INSTALL_DIR='/files1/slurm'
+PATH="$PATH":"$SLURM_INSTALL_DIR/bin"
+
+# sbatch actually has 2 parts: (1) salloc - allocate & populate Slurm's job
+# structures, (2) use the provided script as a batch job template and run it.
+# If salloc fails to allocate a job, then sbatch & salloc return 1. If a student
+# attempt to submit a job that violates the limits & QoS we set for the students,
+# then salloc will fail to allocate a job structure for them.
+SLURM_SALLOC_ERROR_EXIT_CODE=1
+
+# Path to the top-level script which is passed to Slurm. This script is the one
+# that Slurm runs to get the student's job done.
+# NOTE: This path should be in the same directory as all the other seti-* and
+# slurm-* scripts.
+SETI_JOB_RUNNER_SCRIPT='slurm-seti-job'
+
+# Path to "configuration file" INSIDE the Slurm job. This is sourced by the
+# script that Slurm runs to set configuration environment variables, like should
+# the build artifacts be saved?
+SETI_JOB_RUNNER_CONFIG='.seti_job_config'
+
+# Path to a directory that will hold the results of evaluating the student's
+# code and displays the numbers on the leaderboard website.
+SETI_EVAL_OUTPUT_DIR='/files10/cs213/setilab/EVAL/'
+
+# Path to the handin directory
+# XXX: Make sure to update this path and make sure it exists with g+s Unix perms
+# and the sticky bit set before handing SETILab out to students!
+SETI_HANDIN_DIR='/files10/cs213/HANDIN/setilab'
+
+# Path to the handout directory
+# XXX: Make sure to update this path before handing SETILab out to students!
+SETI_HANDOUT_DIR='/home/cs213lab/HANDOUT'
+
+# Path to the directory that holds a cs213-owned copy of seti-perf and seti-eval.
+# We use this in case students modified seti-perf, in case they modified the
+# script. We know that this copy of the script is golden.
+# NOTE: This MUST match what is in setilab repo's top-level Makefile!
+# SETI_GOLDEN_DIR='/home/cs213/seti-scripts-slurm'
+SETI_GOLDEN_DIR='/home/cs213lab/seti-scripts-slurm'
