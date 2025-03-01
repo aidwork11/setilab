@@ -1,0 +1,1994 @@
+Printing environment information
+$SLURM_WORK_DIR=/home/arw5546/cs213/setilab/setilab-handout/.tmp.gdfCazgSAz
+$SLURM_SUBMIT_DIR=/home/arw5546/cs213/setilab/setilab-handout
+$SETI_GOLDEN_DIR=/home/cs213lab/seti-scripts-slurm
+$SETI_HANDOUT_DIR=/home/cs213lab/HANDOUT
+$PERL5LIB=/home/cs213lab/seti-scripts-slurm
+$PWD=/home/arw5546/cs213/setilab/setilab-handout/.tmp.gdfCazgSAz
+
+declare -x BROWSER="/home/arw5546/.cursor-server/cli/servers/Stable-7c00f62dd81412c8defe2b64b4d32d06e0a7e720/server/bin/helpers/browser.sh"
+declare -x COLORTERM="truecolor"
+declare -x DBUS_SESSION_BUS_ADDRESS="unix:path=/run/user/21494/bus"
+declare -x ENVIRONMENT="BATCH"
+declare -x GIT_ASKPASS="/home/arw5546/.cursor-server/cli/servers/Stable-7c00f62dd81412c8defe2b64b4d32d06e0a7e720/server/extensions/git/dist/askpass.sh"
+declare -x GROUP="ug"
+declare -x HOME="/home/arw5546"
+declare -x HOST="moore.wot.eecs.northwestern.edu"
+declare -x HOSTNAME="amdahl-1"
+declare -x HOSTTYPE="x86_64-linux"
+declare -x HYDRA_BOOTSTRAP="slurm"
+declare -x HYDRA_LAUNCHER_EXTRA_ARGS="--external-launcher"
+declare -x I_MPI_HYDRA_BOOTSTRAP="slurm"
+declare -x I_MPI_HYDRA_BOOTSTRAP_EXEC_EXTRA_ARGS="--external-launcher"
+declare -x KEEP_SLURM_WORK_DIR="false"
+declare -x LANG="en_US.UTF-8"
+declare -x LESSOPEN="||/usr/bin/lesspipe.sh %s"
+declare -x LOADEDMODULES=""
+declare -x LOGNAME="arw5546"
+declare -x LS_COLORS="rs=0:di=38;5;33:ln=38;5;51:mh=00:pi=40;38;5;11:so=38;5;13:do=38;5;5:bd=48;5;232;38;5;11:cd=48;5;232;38;5;3:or=48;5;232;38;5;9:mi=01;05;37;41:su=48;5;196;38;5;15:sg=48;5;11;38;5;16:ca=48;5;196;38;5;226:tw=48;5;10;38;5;16:ow=48;5;10;38;5;21:st=48;5;21;38;5;15:ex=38;5;40:*.tar=38;5;9:*.tgz=38;5;9:*.arc=38;5;9:*.arj=38;5;9:*.taz=38;5;9:*.lha=38;5;9:*.lz4=38;5;9:*.lzh=38;5;9:*.lzma=38;5;9:*.tlz=38;5;9:*.txz=38;5;9:*.tzo=38;5;9:*.t7z=38;5;9:*.zip=38;5;9:*.z=38;5;9:*.dz=38;5;9:*.gz=38;5;9:*.lrz=38;5;9:*.lz=38;5;9:*.lzo=38;5;9:*.xz=38;5;9:*.zst=38;5;9:*.tzst=38;5;9:*.bz2=38;5;9:*.bz=38;5;9:*.tbz=38;5;9:*.tbz2=38;5;9:*.tz=38;5;9:*.deb=38;5;9:*.rpm=38;5;9:*.jar=38;5;9:*.war=38;5;9:*.ear=38;5;9:*.sar=38;5;9:*.rar=38;5;9:*.alz=38;5;9:*.ace=38;5;9:*.zoo=38;5;9:*.cpio=38;5;9:*.7z=38;5;9:*.rz=38;5;9:*.cab=38;5;9:*.wim=38;5;9:*.swm=38;5;9:*.dwm=38;5;9:*.esd=38;5;9:*.jpg=38;5;13:*.jpeg=38;5;13:*.mjpg=38;5;13:*.mjpeg=38;5;13:*.gif=38;5;13:*.bmp=38;5;13:*.pbm=38;5;13:*.pgm=38;5;13:*.ppm=38;5;13:*.tga=38;5;13:*.xbm=38;5;13:*.xpm=38;5;13:*.tif=38;5;13:*.tiff=38;5;13:*.png=38;5;13:*.svg=38;5;13:*.svgz=38;5;13:*.mng=38;5;13:*.pcx=38;5;13:*.mov=38;5;13:*.mpg=38;5;13:*.mpeg=38;5;13:*.m2v=38;5;13:*.mkv=38;5;13:*.webm=38;5;13:*.ogm=38;5;13:*.mp4=38;5;13:*.m4v=38;5;13:*.mp4v=38;5;13:*.vob=38;5;13:*.qt=38;5;13:*.nuv=38;5;13:*.wmv=38;5;13:*.asf=38;5;13:*.rm=38;5;13:*.rmvb=38;5;13:*.flc=38;5;13:*.avi=38;5;13:*.fli=38;5;13:*.flv=38;5;13:*.gl=38;5;13:*.dl=38;5;13:*.xcf=38;5;13:*.xwd=38;5;13:*.yuv=38;5;13:*.cgm=38;5;13:*.emf=38;5;13:*.ogv=38;5;13:*.ogx=38;5;13:*.aac=38;5;45:*.au=38;5;45:*.flac=38;5;45:*.m4a=38;5;45:*.mid=38;5;45:*.midi=38;5;45:*.mka=38;5;45:*.mp3=38;5;45:*.mpc=38;5;45:*.ogg=38;5;45:*.ra=38;5;45:*.wav=38;5;45:*.oga=38;5;45:*.opus=38;5;45:*.spx=38;5;45:*.xspf=38;5;45:"
+declare -x MACHTYPE="x86_64"
+declare -x MAIL="/var/spool/mail/arw5546"
+declare -x MANPATH="/usr/share/man:"
+declare -x MODULEPATH="/etc/scl/modulefiles:/etc/scl/modulefiles:/etc/scl/modulefiles:/usr/share/Modules/modulefiles:/etc/modulefiles:/usr/share/modulefiles"
+declare -x MODULEPATH_modshare="/usr/share/Modules/modulefiles:2:/etc/modulefiles:2:/usr/share/modulefiles:2"
+declare -x MODULESHOME="/usr/share/Modules"
+declare -x MODULES_CMD="/usr/share/Modules/libexec/modulecmd.tcl"
+declare -x MODULES_USE_COMPAT_VERSION="0"
+declare -x OLDPWD="/home/arw5546/cs213/setilab/setilab-handout"
+declare -x OMPI_MCA_plm_slurm_args="--external-launcher"
+declare -x OSTYPE="linux"
+declare -x PATH="/vol/eecs362/iverilog-new/bin:/home/arw5546/.cursor-server/cli/servers/Stable-7c00f62dd81412c8defe2b64b4d32d06e0a7e720/server/bin/remote-cli:/vol/eecs362/iverilog-new/bin:/vol/eecs362/iverilog-new/bin:/usr/share/Modules/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/opt/dell/srvadmin/bin:/files1/slurm/bin"
+declare -x PERL5LIB="/home/cs213lab/seti-scripts-slurm"
+declare -x PRTE_MCA_plm_slurm_args="--external-launcher"
+declare -x PWD="/home/arw5546/cs213/setilab/setilab-handout/.tmp.gdfCazgSAz"
+declare -x RENAMED_WORK_DIR_PATH="/home/arw5546/cs213/setilab/setilab-handout/seti-run-3509-eval-2025-02-28T20:45:34-06:00"
+declare -x SETI_EVAL_TO_RUN="/home/cs213lab/seti-scripts-slurm/seti-eval -n \"arw5546-mdq5477\" -t \"1\" -k e38f08dd9c909098f990892aefffb1eb -a 0"
+declare -x SETI_GOLDEN_DIR="/home/cs213lab/seti-scripts-slurm"
+declare -x SETI_HANDOUT_DIR="/home/cs213lab/HANDOUT"
+declare -x SHELL="/bin/tcsh"
+declare -x SHLVL="7"
+declare -x SLURMD_NODENAME="amdahl-1"
+declare -x SLURM_CLUSTER_NAME="teaching"
+declare -x SLURM_CONF="/files1/slurm/etc/slurm/slurm.conf"
+declare -x SLURM_CPUS_ON_NODE="64"
+declare -x SLURM_GTIDS="0"
+declare -x SLURM_JOBID="3509"
+declare -x SLURM_JOB_ACCOUNT="cs213students"
+declare -x SLURM_JOB_CPUS_PER_NODE="64"
+declare -x SLURM_JOB_END_TIME="1740798334"
+declare -x SLURM_JOB_GID="307"
+declare -x SLURM_JOB_ID="3509"
+declare -x SLURM_JOB_NAME="setilab-arw5546-mdq5477-eval"
+declare -x SLURM_JOB_NODELIST="amdahl-1"
+declare -x SLURM_JOB_NUM_NODES="1"
+declare -x SLURM_JOB_PARTITION="amdahl"
+declare -x SLURM_JOB_QOS="setilab"
+declare -x SLURM_JOB_START_TIME="1740797134"
+declare -x SLURM_JOB_UID="21494"
+declare -x SLURM_JOB_USER="arw5546"
+declare -x SLURM_LOCALID="0"
+declare -x SLURM_NNODES="1"
+declare -x SLURM_NODEID="0"
+declare -x SLURM_NODELIST="amdahl-1"
+declare -x SLURM_PRIO_PROCESS="0"
+declare -x SLURM_PROCID="0"
+declare -x SLURM_SUBMIT_DIR="/home/arw5546/cs213/setilab/setilab-handout"
+declare -x SLURM_SUBMIT_HOST="moore.wot.eecs.northwestern.edu"
+declare -x SLURM_TASKS_PER_NODE="64"
+declare -x SLURM_TASK_PID="640891"
+declare -x SLURM_TOPOLOGY_ADDR="amdahl-1"
+declare -x SLURM_TOPOLOGY_ADDR_PATTERN="node"
+declare -x SLURM_WORK_DIR="/home/arw5546/cs213/setilab/setilab-handout/.tmp.gdfCazgSAz"
+declare -x SSH_CLIENT="73.72.190.89 55822 22"
+declare -x SSH_CONNECTION="73.72.190.89 55822 129.105.5.212 22"
+declare -x SSL_CERT_DIR="/etc/pki/tls/certs"
+declare -x SSL_CERT_FILE="/etc/pki/ca-trust/extracted/pem/tls-ca-bundle.pem"
+declare -x S_COLORS="auto"
+declare -x TERM="xterm-256color"
+declare -x TERM_PROGRAM="vscode"
+declare -x TERM_PROGRAM_VERSION="0.45.17"
+declare -x TMPDIR="/tmp"
+declare -x USER="arw5546"
+declare -x VENDOR="unknown"
+declare -x VSCODE_GIT_ASKPASS_EXTRA_ARGS=""
+declare -x VSCODE_GIT_ASKPASS_MAIN="/home/arw5546/.cursor-server/cli/servers/Stable-7c00f62dd81412c8defe2b64b4d32d06e0a7e720/server/extensions/git/dist/askpass-main.js"
+declare -x VSCODE_GIT_ASKPASS_NODE="/home/arw5546/.cursor-server/cli/servers/Stable-7c00f62dd81412c8defe2b64b4d32d06e0a7e720/server/node"
+declare -x VSCODE_GIT_IPC_HANDLE="/run/user/21494/vscode-git-3bba61234a.sock"
+declare -x VSCODE_IPC_HOOK_CLI="/run/user/21494/vscode-ipc-12baff33-faa6-4a8f-a419-8c951a992d57.sock"
+declare -x XDG_RUNTIME_DIR="/run/user/21494"
+declare -x XDG_SESSION_ID="27047"
+
+Building SETI code
+
+gcc -g -Wall -c filter.c
+gcc -g -Wall -c signal.c
+gcc -g -Wall -c timing.c
+ar ruv libfilter.a filter.o signal.o timing.o
+ar: creating libfilter.a
+a - filter.o
+a - signal.o
+a - timing.o
+gcc -g -Wall -pthread p_band_scan.c -L. -lfilter -funroll-loops -march=native -ftree-vectorize -fomit-frame-pointer -lm -flto -Ofast -fopenmp -mavx512f -o p_band_scan
+
+Building your code took 5 seconds
+
+Running student SETI code
+Running /home/cs213lab/seti-scripts-slurm/seti-eval -n "arw5546-mdq5477" -t "1" -k e38f08dd9c909098f990892aefffb1eb -a 0
+
+Found valid key
+
+Teamnames match
+
+Regenerating signal for arw5546-mdq5477
+
+Regen: /home/cs213lab/seti-scripts-slurm/json_siggen -j /home/cs213lab/www/meta/arw5546-mdq5477.sig/sig.json -i 0 -o /home/cs213lab/www/meta/arw5546-mdq5477.sig/tmp-3509.sig
+Attempting to open performance file for Job 3509
+Testing signal for arw5546-mdq5477 (this will take some time...)
+
+/home/arw5546/cs213/setilab/setilab-handout/.tmp.gdfCazgSAz/p_band_scan bin /home/cs213lab/www/meta/arw5546-mdq5477.sig/tmp-3509.sig 400000 32 256 8 8
+type:     Binary
+        file:     /home/cs213lab/www/meta/arw5546-mdq5477.sig/tmp-3509.sig
+        Fs:       400000.000000 Hz
+        order:    32
+        bands:    256
+        procs:    8
+        threads:  8
+Load or map file
+Read 12000000 samples
+Removing DC component of 0.002699
+signal average power:     1.156557
+    0             0.000100 to           781.249900 Hz:             0.000024 *(meh)
+    1           781.250100 to          1562.499900 Hz:             0.000024 *(meh)
+    2          1562.500100 to          2343.749900 Hz:             0.000024 *(meh)
+    3          2343.750100 to          3124.999900 Hz:             0.000023 *(meh)
+    4          3125.000100 to          3906.249900 Hz:             0.000022 *(meh)
+    5          3906.250100 to          4687.499900 Hz:             0.000022 *(meh)
+    6          4687.500100 to          5468.749900 Hz:             0.000021 *(meh)
+    7          5468.750100 to          6249.999900 Hz:             0.000020 *(meh)
+    8          6250.000100 to          7031.249900 Hz:             0.000019 *(meh)
+    9          7031.250100 to          7812.499900 Hz:             0.000018 *(meh)
+   10          7812.500100 to          8593.749900 Hz:             0.000017 *(meh)
+   11          8593.750100 to          9374.999900 Hz:             0.000016 *(meh)
+   12          9375.000100 to         10156.249900 Hz:             0.000015 *(meh)
+   13         10156.250100 to         10937.499900 Hz:             0.000015 *(meh)
+   14         10937.500100 to         11718.749900 Hz:             0.000014 *(meh)
+   15         11718.750100 to         12499.999900 Hz:             0.000013 *(meh)
+   16         12500.000100 to         13281.249900 Hz:             0.000012 *(meh)
+   17         13281.250100 to         14062.499900 Hz:             0.000012 *(meh)
+   18         14062.500100 to         14843.749900 Hz:             0.000011 *(meh)
+   19         14843.750100 to         15624.999900 Hz:             0.000010 *(meh)
+   20         15625.000100 to         16406.249900 Hz:             0.000010 *(meh)
+   21         16406.250100 to         17187.499900 Hz:             0.000009 *(meh)
+   22         17187.500100 to         17968.749900 Hz:             0.000008 *(meh)
+   23         17968.750100 to         18749.999900 Hz:             0.000008 *(meh)
+   24         18750.000100 to         19531.249900 Hz:             0.000007 *(meh)
+   25         19531.250100 to         20312.499900 Hz:             0.000006 *(meh)
+   26         20312.500100 to         21093.749900 Hz:             0.000006 *(meh)
+   27         21093.750100 to         21874.999900 Hz:             0.000005 *(meh)
+   28         21875.000100 to         22656.249900 Hz:             0.000004 *(meh)
+   29         22656.250100 to         23437.499900 Hz:             0.000004 *(meh)
+   30         23437.500100 to         24218.749900 Hz:             0.000003 *(meh)
+   31         24218.750100 to         24999.999900 Hz:             0.000003 *(meh)
+   32         25000.000100 to         25781.249900 Hz:             0.000003 *(meh)
+   33         25781.250100 to         26562.499900 Hz:             0.000002 *(meh)
+   34         26562.500100 to         27343.749900 Hz:             0.000002 *(meh)
+   35         27343.750100 to         28124.999900 Hz:             0.000002 *(meh)
+   36         28125.000100 to         28906.249900 Hz:             0.000002 *(meh)
+   37         28906.250100 to         29687.499900 Hz:             0.000002 *(meh)
+   38         29687.500100 to         30468.749900 Hz:             0.000002 *(meh)
+   39         30468.750100 to         31249.999900 Hz:             0.000003 *(meh)
+   40         31250.000100 to         32031.249900 Hz:             0.000003 *(meh)
+   41         32031.250100 to         32812.499900 Hz:             0.000003 *(meh)
+   42         32812.500100 to         33593.749900 Hz:             0.000003 *(meh)
+   43         33593.750100 to         34374.999900 Hz:             0.000004 *(meh)
+   44         34375.000100 to         35156.249900 Hz:             0.000004 *(meh)
+   45         35156.250100 to         35937.499900 Hz:             0.000004 *(meh)
+   46         35937.500100 to         36718.749900 Hz:             0.000004 *(meh)
+   47         36718.750100 to         37499.999900 Hz:             0.000005 *(meh)
+   48         37500.000100 to         38281.249900 Hz:             0.000005 *(meh)
+   49         38281.250100 to         39062.499900 Hz:             0.000005 *(meh)
+   50         39062.500100 to         39843.749900 Hz:             0.000005 *(meh)
+   51         39843.750100 to         40624.999900 Hz:             0.000005 *(meh)
+   52         40625.000100 to         41406.249900 Hz:             0.000005 *(meh)
+   53         41406.250100 to         42187.499900 Hz:             0.000005 *(meh)
+   54         42187.500100 to         42968.749900 Hz:             0.000004 *(meh)
+   55         42968.750100 to         43749.999900 Hz:             0.000004 *(meh)
+   56         43750.000100 to         44531.249900 Hz:             0.000004 *(meh)
+   57         44531.250100 to         45312.499900 Hz:             0.000003 *(meh)
+   58         45312.500100 to         46093.749900 Hz:             0.000003 *(meh)
+   59         46093.750100 to         46874.999900 Hz:             0.000003 *(meh)
+   60         46875.000100 to         47656.249900 Hz:             0.000003 *(meh)
+   61         47656.250100 to         48437.499900 Hz:             0.000004 *(meh)
+   62         48437.500100 to         49218.749900 Hz:             0.000005 *(meh)
+   63         49218.750100 to         49999.999900 Hz:             0.000007 *(meh)
+   64         50000.000100 to         50781.249900 Hz:             0.000011 *(meh)
+   65         50781.250100 to         51562.499900 Hz:             0.000017 *(meh)
+   66         51562.500100 to         52343.749900 Hz:             0.000026 *(meh)
+   67         52343.750100 to         53124.999900 Hz:             0.000039 **(meh)
+   68         53125.000100 to         53906.249900 Hz:             0.000056 **(meh)
+   69         53906.250100 to         54687.499900 Hz:             0.000078 ***(meh)
+   70         54687.500100 to         55468.749900 Hz:             0.000106 ****(meh)
+   71         55468.750100 to         56249.999900 Hz:             0.000140 *****(meh)
+   72         56250.000100 to         57031.249900 Hz:             0.000182 ******(meh)
+   73         57031.250100 to         57812.499900 Hz:             0.000232 ********(WOW)
+   74         57812.500100 to         58593.749900 Hz:             0.000289 *********(WOW)
+   75         58593.750100 to         59374.999900 Hz:             0.000354 ***********(WOW)
+   76         59375.000100 to         60156.249900 Hz:             0.000426 **************(WOW)
+   77         60156.250100 to         60937.499900 Hz:             0.000505 ****************(WOW)
+   78         60937.500100 to         61718.749900 Hz:             0.000589 *******************(WOW)
+   79         61718.750100 to         62499.999900 Hz:             0.000677 *********************(WOW)
+   80         62500.000100 to         63281.249900 Hz:             0.000767 ************************(WOW)
+   81         63281.250100 to         64062.499900 Hz:             0.000856 ***************************(WOW)
+   82         64062.500100 to         64843.749900 Hz:             0.000943 ******************************(WOW)
+   83         64843.750100 to         65624.999900 Hz:             0.001025 ********************************(WOW)
+   84         65625.000100 to         66406.249900 Hz:             0.001100 **********************************(WOW)
+   85         66406.250100 to         67187.499900 Hz:             0.001165 ************************************(WOW)
+   86         67187.500100 to         67968.749900 Hz:             0.001219 **************************************(WOW)
+   87         67968.750100 to         68749.999900 Hz:             0.001259 ***************************************(WOW)
+   88         68750.000100 to         69531.249900 Hz:             0.001285 ****************************************(WOW)
+   89         69531.250100 to         70312.499900 Hz:             0.001295 ****************************************(WOW)
+   90         70312.500100 to         71093.749900 Hz:             0.001289 ****************************************(WOW)
+   91         71093.750100 to         71874.999900 Hz:             0.001268 ****************************************(WOW)
+   92         71875.000100 to         72656.249900 Hz:             0.001231 ***************************************(WOW)
+   93         72656.250100 to         73437.499900 Hz:             0.001181 *************************************(WOW)
+   94         73437.500100 to         74218.749900 Hz:             0.001118 ***********************************(WOW)
+   95         74218.750100 to         74999.999900 Hz:             0.001045 *********************************(WOW)
+   96         75000.000100 to         75781.249900 Hz:             0.000964 ******************************(WOW)
+   97         75781.250100 to         76562.499900 Hz:             0.000878 ****************************(WOW)
+   98         76562.500100 to         77343.749900 Hz:             0.000788 *************************(WOW)
+   99         77343.750100 to         78124.999900 Hz:             0.000698 **********************(WOW)
+  100         78125.000100 to         78906.249900 Hz:             0.000609 *******************(WOW)
+  101         78906.250100 to         79687.499900 Hz:             0.000523 *****************(WOW)
+  102         79687.500100 to         80468.749900 Hz:             0.000443 **************(WOW)
+  103         80468.750100 to         81249.999900 Hz:             0.000368 ************(WOW)
+  104         81250.000100 to         82031.249900 Hz:             0.000301 **********(WOW)
+  105         82031.250100 to         82812.499900 Hz:             0.000242 ********(WOW)
+  106         82812.500100 to         83593.749900 Hz:             0.000190 ******(meh)
+  107         83593.750100 to         84374.999900 Hz:             0.000147 *****(meh)
+  108         84375.000100 to         85156.249900 Hz:             0.000111 ****(meh)
+  109         85156.250100 to         85937.499900 Hz:             0.000081 ***(meh)
+  110         85937.500100 to         86718.749900 Hz:             0.000058 **(meh)
+  111         86718.750100 to         87499.999900 Hz:             0.000040 **(meh)
+  112         87500.000100 to         88281.249900 Hz:             0.000027 *(meh)
+  113         88281.250100 to         89062.499900 Hz:             0.000017 *(meh)
+  114         89062.500100 to         89843.749900 Hz:             0.000011 *(meh)
+  115         89843.750100 to         90624.999900 Hz:             0.000006 *(meh)
+  116         90625.000100 to         91406.249900 Hz:             0.000003 *(meh)
+  117         91406.250100 to         92187.499900 Hz:             0.000002 *(meh)
+  118         92187.500100 to         92968.749900 Hz:             0.000001 *(meh)
+  119         92968.750100 to         93749.999900 Hz:             0.000000 *(meh)
+  120         93750.000100 to         94531.249900 Hz:             0.000000 *(meh)
+  121         94531.250100 to         95312.499900 Hz:             0.000000 *(meh)
+  122         95312.500100 to         96093.749900 Hz:             0.000000 *(meh)
+  123         96093.750100 to         96874.999900 Hz:             0.000000 *(meh)
+  124         96875.000100 to         97656.249900 Hz:             0.000000 *(meh)
+  125         97656.250100 to         98437.499900 Hz:             0.000000 *(meh)
+  126         98437.500100 to         99218.749900 Hz:             0.000000 *(meh)
+  127         99218.750100 to         99999.999900 Hz:             0.000000 *(meh)
+  128        100000.000100 to        100781.249900 Hz:             0.000000 *(meh)
+  129        100781.250100 to        101562.499900 Hz:             0.000000 *(meh)
+  130        101562.500100 to        102343.749900 Hz:             0.000000 *(meh)
+  131        102343.750100 to        103124.999900 Hz:             0.000000 *(meh)
+  132        103125.000100 to        103906.249900 Hz:             0.000000 *(meh)
+  133        103906.250100 to        104687.499900 Hz:             0.000000 *(meh)
+  134        104687.500100 to        105468.749900 Hz:             0.000000 *(meh)
+  135        105468.750100 to        106249.999900 Hz:             0.000000 *(meh)
+  136        106250.000100 to        107031.249900 Hz:             0.000000 *(meh)
+  137        107031.250100 to        107812.499900 Hz:             0.000000 *(meh)
+  138        107812.500100 to        108593.749900 Hz:             0.000000 *(meh)
+  139        108593.750100 to        109374.999900 Hz:             0.000000 *(meh)
+  140        109375.000100 to        110156.249900 Hz:             0.000000 *(meh)
+  141        110156.250100 to        110937.499900 Hz:             0.000000 *(meh)
+  142        110937.500100 to        111718.749900 Hz:             0.000000 *(meh)
+  143        111718.750100 to        112499.999900 Hz:             0.000000 *(meh)
+  144        112500.000100 to        113281.249900 Hz:             0.000000 *(meh)
+  145        113281.250100 to        114062.499900 Hz:             0.000000 *(meh)
+  146        114062.500100 to        114843.749900 Hz:             0.000000 *(meh)
+  147        114843.750100 to        115624.999900 Hz:             0.000000 *(meh)
+  148        115625.000100 to        116406.249900 Hz:             0.000000 *(meh)
+  149        116406.250100 to        117187.499900 Hz:             0.000000 *(meh)
+  150        117187.500100 to        117968.749900 Hz:             0.000000 *(meh)
+  151        117968.750100 to        118749.999900 Hz:             0.000000 *(meh)
+  152        118750.000100 to        119531.249900 Hz:             0.000000 *(meh)
+  153        119531.250100 to        120312.499900 Hz:             0.000000 *(meh)
+  154        120312.500100 to        121093.749900 Hz:             0.000000 *(meh)
+  155        121093.750100 to        121874.999900 Hz:             0.000000 *(meh)
+  156        121875.000100 to        122656.249900 Hz:             0.000000 *(meh)
+  157        122656.250100 to        123437.499900 Hz:             0.000000 *(meh)
+  158        123437.500100 to        124218.749900 Hz:             0.000000 *(meh)
+  159        124218.750100 to        124999.999900 Hz:             0.000000 *(meh)
+  160        125000.000100 to        125781.249900 Hz:             0.000000 *(meh)
+  161        125781.250100 to        126562.499900 Hz:             0.000000 *(meh)
+  162        126562.500100 to        127343.749900 Hz:             0.000000 *(meh)
+  163        127343.750100 to        128124.999900 Hz:             0.000000 *(meh)
+  164        128125.000100 to        128906.249900 Hz:             0.000000 *(meh)
+  165        128906.250100 to        129687.499900 Hz:             0.000000 *(meh)
+  166        129687.500100 to        130468.749900 Hz:             0.000000 *(meh)
+  167        130468.750100 to        131249.999900 Hz:             0.000000 *(meh)
+  168        131250.000100 to        132031.249900 Hz:             0.000000 *(meh)
+  169        132031.250100 to        132812.499900 Hz:             0.000000 *(meh)
+  170        132812.500100 to        133593.749900 Hz:             0.000000 *(meh)
+  171        133593.750100 to        134374.999900 Hz:             0.000000 *(meh)
+  172        134375.000100 to        135156.249900 Hz:             0.000000 *(meh)
+  173        135156.250100 to        135937.499900 Hz:             0.000000 *(meh)
+  174        135937.500100 to        136718.749900 Hz:             0.000000 *(meh)
+  175        136718.750100 to        137499.999900 Hz:             0.000000 *(meh)
+  176        137500.000100 to        138281.249900 Hz:             0.000000 *(meh)
+  177        138281.250100 to        139062.499900 Hz:             0.000000 *(meh)
+  178        139062.500100 to        139843.749900 Hz:             0.000000 *(meh)
+  179        139843.750100 to        140624.999900 Hz:             0.000000 *(meh)
+  180        140625.000100 to        141406.249900 Hz:             0.000000 *(meh)
+  181        141406.250100 to        142187.499900 Hz:             0.000000 *(meh)
+  182        142187.500100 to        142968.749900 Hz:             0.000000 *(meh)
+  183        142968.750100 to        143749.999900 Hz:             0.000000 *(meh)
+  184        143750.000100 to        144531.249900 Hz:             0.000000 *(meh)
+  185        144531.250100 to        145312.499900 Hz:             0.000000 *(meh)
+  186        145312.500100 to        146093.749900 Hz:             0.000000 *(meh)
+  187        146093.750100 to        146874.999900 Hz:             0.000000 *(meh)
+  188        146875.000100 to        147656.249900 Hz:             0.000000 *(meh)
+  189        147656.250100 to        148437.499900 Hz:             0.000000 *(meh)
+  190        148437.500100 to        149218.749900 Hz:             0.000000 *(meh)
+  191        149218.750100 to        149999.999900 Hz:             0.000000 *(meh)
+  192        150000.000100 to        150781.249900 Hz:             0.000000 *(meh)
+  193        150781.250100 to        151562.499900 Hz:             0.000000 *(meh)
+  194        151562.500100 to        152343.749900 Hz:             0.000000 *(meh)
+  195        152343.750100 to        153124.999900 Hz:             0.000000 *(meh)
+  196        153125.000100 to        153906.249900 Hz:             0.000000 *(meh)
+  197        153906.250100 to        154687.499900 Hz:             0.000000 *(meh)
+  198        154687.500100 to        155468.749900 Hz:             0.000000 *(meh)
+  199        155468.750100 to        156249.999900 Hz:             0.000000 *(meh)
+  200        156250.000100 to        157031.249900 Hz:             0.000000 *(meh)
+  201        157031.250100 to        157812.499900 Hz:             0.000000 *(meh)
+  202        157812.500100 to        158593.749900 Hz:             0.000000 *(meh)
+  203        158593.750100 to        159374.999900 Hz:             0.000000 *(meh)
+  204        159375.000100 to        160156.249900 Hz:             0.000000 *(meh)
+  205        160156.250100 to        160937.499900 Hz:             0.000000 *(meh)
+  206        160937.500100 to        161718.749900 Hz:             0.000000 *(meh)
+  207        161718.750100 to        162499.999900 Hz:             0.000000 *(meh)
+  208        162500.000100 to        163281.249900 Hz:             0.000000 *(meh)
+  209        163281.250100 to        164062.499900 Hz:             0.000000 *(meh)
+  210        164062.500100 to        164843.749900 Hz:             0.000000 *(meh)
+  211        164843.750100 to        165624.999900 Hz:             0.000000 *(meh)
+  212        165625.000100 to        166406.249900 Hz:             0.000000 *(meh)
+  213        166406.250100 to        167187.499900 Hz:             0.000000 *(meh)
+  214        167187.500100 to        167968.749900 Hz:             0.000000 *(meh)
+  215        167968.750100 to        168749.999900 Hz:             0.000000 *(meh)
+  216        168750.000100 to        169531.249900 Hz:             0.000000 *(meh)
+  217        169531.250100 to        170312.499900 Hz:             0.000000 *(meh)
+  218        170312.500100 to        171093.749900 Hz:             0.000000 *(meh)
+  219        171093.750100 to        171874.999900 Hz:             0.000000 *(meh)
+  220        171875.000100 to        172656.249900 Hz:             0.000000 *(meh)
+  221        172656.250100 to        173437.499900 Hz:             0.000000 *(meh)
+  222        173437.500100 to        174218.749900 Hz:             0.000000 *(meh)
+  223        174218.750100 to        174999.999900 Hz:             0.000000 *(meh)
+  224        175000.000100 to        175781.249900 Hz:             0.000000 *(meh)
+  225        175781.250100 to        176562.499900 Hz:             0.000000 *(meh)
+  226        176562.500100 to        177343.749900 Hz:             0.000000 *(meh)
+  227        177343.750100 to        178124.999900 Hz:             0.000000 *(meh)
+  228        178125.000100 to        178906.249900 Hz:             0.000000 *(meh)
+  229        178906.250100 to        179687.499900 Hz:             0.000000 *(meh)
+  230        179687.500100 to        180468.749900 Hz:             0.000000 *(meh)
+  231        180468.750100 to        181249.999900 Hz:             0.000000 *(meh)
+  232        181250.000100 to        182031.249900 Hz:             0.000000 *(meh)
+  233        182031.250100 to        182812.499900 Hz:             0.000000 *(meh)
+  234        182812.500100 to        183593.749900 Hz:             0.000000 *(meh)
+  235        183593.750100 to        184374.999900 Hz:             0.000000 *(meh)
+  236        184375.000100 to        185156.249900 Hz:             0.000000 *(meh)
+  237        185156.250100 to        185937.499900 Hz:             0.000000 *(meh)
+  238        185937.500100 to        186718.749900 Hz:             0.000000 *(meh)
+  239        186718.750100 to        187499.999900 Hz:             0.000000 *(meh)
+  240        187500.000100 to        188281.249900 Hz:             0.000000 *(meh)
+  241        188281.250100 to        189062.499900 Hz:             0.000000 *(meh)
+  242        189062.500100 to        189843.749900 Hz:             0.000000 *(meh)
+  243        189843.750100 to        190624.999900 Hz:             0.000000 *(meh)
+  244        190625.000100 to        191406.249900 Hz:             0.000000 *(meh)
+  245        191406.250100 to        192187.499900 Hz:             0.000000 *(meh)
+  246        192187.500100 to        192968.749900 Hz:             0.000000 *(meh)
+  247        192968.750100 to        193749.999900 Hz:             0.000000 *(meh)
+  248        193750.000100 to        194531.249900 Hz:             0.000000 *(meh)
+  249        194531.250100 to        195312.499900 Hz:             0.000000 *(meh)
+  250        195312.500100 to        196093.749900 Hz:             0.000000 *(meh)
+  251        196093.750100 to        196874.999900 Hz:             0.000000 *(meh)
+  252        196875.000100 to        197656.249900 Hz:             0.000000 *(meh)
+  253        197656.250100 to        198437.499900 Hz:             0.000000 *(meh)
+  254        198437.500100 to        199218.749900 Hz:             0.000000 *(meh)
+  255        199218.750100 to        199999.999900 Hz:             0.000000 *(meh)
+Resource usages:
+         User time        306.478359 seconds
+         System time      0.000000 seconds
+         Page faults      4756
+         Page swaps       0
+         Blocks of I/O    0
+         Signals caught   0
+         Context switches 159
+timing overhead is at least 52 cycles
+Analysis took 50526611824 cycles (18.091436 seconds) by cycle count, timing overhead=52 cycles
+Note that cycle count only makes sense if the thread stayed on one core
+Analysis took 38.956503 seconds by basic timing
+POSSIBLE ALIENS 57031.250100-82812.499900 HZ (CENTER 69921.875000 HZ)
+306.51user 0.34system 0:40.03elapsed 766%CPU (0avgtext+0avgdata 96700maxresident)k
+187376inputs+0outputs (0major+5291minor)pagefaults 0swaps
+amdahl-1 32 256 8 8: Their time: 40030
+/home/cs213lab/HANDOUT/p_band_scan bin /home/cs213lab/www/meta/arw5546-mdq5477.sig/tmp-3509.sig 400000 32 256 8 8
+type:     Binary
+file:     /home/cs213lab/www/meta/arw5546-mdq5477.sig/tmp-3509.sig
+Fs:       400000.000000 Hz
+order:    32
+bands:    256
+threads:  8
+procs:    8
+Load or map file
+Read 12000000 samples
+work: [32, 32, 32, 32, 32, 32, 32, 32]
+ginfo.block: [0, 32, 64, 96, 128, 160, 192, 224, 256]
+Removing DC component of 0.002699
+signal average power:     1.156557
+(4) Resource usages (thread 4):
+(4) User time        67.127869 seconds
+(4) System time      0.015846 seconds
+(4) Page faults      4453
+(4) Page swaps       0
+(4) Blocks of I/O    0
+(4) Signals caught   0
+(4) Context switches 17
+(5) Resource usages (thread 5):
+(5) User time        67.172450 seconds
+(5) System time      0.001979 seconds
+(5) Page faults      729
+(5) Page swaps       0
+(5) Blocks of I/O    0
+(5) Signals caught   0
+(5) Context switches 18
+(7) Resource usages (thread 7):
+(7) User time        67.172513 seconds
+(7) System time      0.003808 seconds
+(7) Page faults      576
+(7) Page swaps       0
+(7) Blocks of I/O    0
+(7) Signals caught   0
+(7) Context switches 17
+(2) Resource usages (thread 2):
+(2) User time        67.176412 seconds
+(2) System time      0.001986 seconds
+(2) Page faults      148
+(2) Page swaps       0
+(2) Blocks of I/O    0
+(2) Signals caught   0
+(2) Context switches 17
+(6) Resource usages (thread 6):
+(6) User time        67.210362 seconds
+(6) System time      0.002974 seconds
+(6) Page faults      1179
+(6) Page swaps       0
+(6) Blocks of I/O    0
+(6) Signals caught   0
+(6) Context switches 18
+(3) Resource usages (thread 3):
+(3) User time        67.232802 seconds
+(3) System time      0.000000 seconds
+(3) Page faults      60
+(3) Page swaps       0
+(3) Blocks of I/O    0
+(3) Signals caught   0
+(3) Context switches 18
+(1) Resource usages (thread 1):
+(1) User time        67.310206 seconds
+(1) System time      0.000000 seconds
+(1) Page faults      34
+(1) Page swaps       0
+(1) Blocks of I/O    0
+(1) Signals caught   0
+(1) Context switches 17
+(0) Resource usages (thread 0):
+(0) User time        67.419691 seconds
+(0) System time      0.000000 seconds
+(0) Page faults      44
+(0) Page swaps       0
+(0) Blocks of I/O    0
+(0) Signals caught   0
+(0) Context switches 300
+    0             0.000100 to           781.249900 Hz:             0.000024 *(meh)
+    1           781.250100 to          1562.499900 Hz:             0.000024 *(meh)
+    2          1562.500100 to          2343.749900 Hz:             0.000024 *(meh)
+    3          2343.750100 to          3124.999900 Hz:             0.000023 *(meh)
+    4          3125.000100 to          3906.249900 Hz:             0.000022 *(meh)
+    5          3906.250100 to          4687.499900 Hz:             0.000022 *(meh)
+    6          4687.500100 to          5468.749900 Hz:             0.000021 *(meh)
+    7          5468.750100 to          6249.999900 Hz:             0.000020 *(meh)
+    8          6250.000100 to          7031.249900 Hz:             0.000019 *(meh)
+    9          7031.250100 to          7812.499900 Hz:             0.000018 *(meh)
+   10          7812.500100 to          8593.749900 Hz:             0.000017 *(meh)
+   11          8593.750100 to          9374.999900 Hz:             0.000016 *(meh)
+   12          9375.000100 to         10156.249900 Hz:             0.000015 *(meh)
+   13         10156.250100 to         10937.499900 Hz:             0.000015 *(meh)
+   14         10937.500100 to         11718.749900 Hz:             0.000014 *(meh)
+   15         11718.750100 to         12499.999900 Hz:             0.000013 *(meh)
+   16         12500.000100 to         13281.249900 Hz:             0.000012 *(meh)
+   17         13281.250100 to         14062.499900 Hz:             0.000012 *(meh)
+   18         14062.500100 to         14843.749900 Hz:             0.000011 *(meh)
+   19         14843.750100 to         15624.999900 Hz:             0.000010 *(meh)
+   20         15625.000100 to         16406.249900 Hz:             0.000010 *(meh)
+   21         16406.250100 to         17187.499900 Hz:             0.000009 *(meh)
+   22         17187.500100 to         17968.749900 Hz:             0.000008 *(meh)
+   23         17968.750100 to         18749.999900 Hz:             0.000008 *(meh)
+   24         18750.000100 to         19531.249900 Hz:             0.000007 *(meh)
+   25         19531.250100 to         20312.499900 Hz:             0.000006 *(meh)
+   26         20312.500100 to         21093.749900 Hz:             0.000006 *(meh)
+   27         21093.750100 to         21874.999900 Hz:             0.000005 *(meh)
+   28         21875.000100 to         22656.249900 Hz:             0.000004 *(meh)
+   29         22656.250100 to         23437.499900 Hz:             0.000004 *(meh)
+   30         23437.500100 to         24218.749900 Hz:             0.000003 *(meh)
+   31         24218.750100 to         24999.999900 Hz:             0.000003 *(meh)
+   32         25000.000100 to         25781.249900 Hz:             0.000003 *(meh)
+   33         25781.250100 to         26562.499900 Hz:             0.000002 *(meh)
+   34         26562.500100 to         27343.749900 Hz:             0.000002 *(meh)
+   35         27343.750100 to         28124.999900 Hz:             0.000002 *(meh)
+   36         28125.000100 to         28906.249900 Hz:             0.000002 *(meh)
+   37         28906.250100 to         29687.499900 Hz:             0.000002 *(meh)
+   38         29687.500100 to         30468.749900 Hz:             0.000002 *(meh)
+   39         30468.750100 to         31249.999900 Hz:             0.000003 *(meh)
+   40         31250.000100 to         32031.249900 Hz:             0.000003 *(meh)
+   41         32031.250100 to         32812.499900 Hz:             0.000003 *(meh)
+   42         32812.500100 to         33593.749900 Hz:             0.000003 *(meh)
+   43         33593.750100 to         34374.999900 Hz:             0.000004 *(meh)
+   44         34375.000100 to         35156.249900 Hz:             0.000004 *(meh)
+   45         35156.250100 to         35937.499900 Hz:             0.000004 *(meh)
+   46         35937.500100 to         36718.749900 Hz:             0.000004 *(meh)
+   47         36718.750100 to         37499.999900 Hz:             0.000005 *(meh)
+   48         37500.000100 to         38281.249900 Hz:             0.000005 *(meh)
+   49         38281.250100 to         39062.499900 Hz:             0.000005 *(meh)
+   50         39062.500100 to         39843.749900 Hz:             0.000005 *(meh)
+   51         39843.750100 to         40624.999900 Hz:             0.000005 *(meh)
+   52         40625.000100 to         41406.249900 Hz:             0.000005 *(meh)
+   53         41406.250100 to         42187.499900 Hz:             0.000005 *(meh)
+   54         42187.500100 to         42968.749900 Hz:             0.000004 *(meh)
+   55         42968.750100 to         43749.999900 Hz:             0.000004 *(meh)
+   56         43750.000100 to         44531.249900 Hz:             0.000004 *(meh)
+   57         44531.250100 to         45312.499900 Hz:             0.000003 *(meh)
+   58         45312.500100 to         46093.749900 Hz:             0.000003 *(meh)
+   59         46093.750100 to         46874.999900 Hz:             0.000003 *(meh)
+   60         46875.000100 to         47656.249900 Hz:             0.000003 *(meh)
+   61         47656.250100 to         48437.499900 Hz:             0.000004 *(meh)
+   62         48437.500100 to         49218.749900 Hz:             0.000005 *(meh)
+   63         49218.750100 to         49999.999900 Hz:             0.000007 *(meh)
+   64         50000.000100 to         50781.249900 Hz:             0.000011 *(meh)
+
+   65         50781.250100 to         51562.499900 Hz:             0.000017 *(meh)
+
+   66         51562.500100 to         52343.749900 Hz:             0.000026 *(meh)
+
+   67         52343.750100 to         53124.999900 Hz:             0.000039 **(meh)
+
+   68         53125.000100 to         53906.249900 Hz:             0.000056 **(meh)
+
+   69         53906.250100 to         54687.499900 Hz:             0.000078 ***(meh)
+
+   70         54687.500100 to         55468.749900 Hz:             0.000106 ****(meh)
+
+   71         55468.750100 to         56249.999900 Hz:             0.000140 *****(meh)
+
+   72         56250.000100 to         57031.249900 Hz:             0.000182 ******(meh)
+
+   73         57031.250100 to         57812.499900 Hz:             0.000232 ********(WOW)
+
+   74         57812.500100 to         58593.749900 Hz:             0.000289 *********(WOW)
+
+   75         58593.750100 to         59374.999900 Hz:             0.000354 ***********(WOW)
+
+   76         59375.000100 to         60156.249900 Hz:             0.000426 **************(WOW)
+
+   77         60156.250100 to         60937.499900 Hz:             0.000505 ****************(WOW)
+
+   78         60937.500100 to         61718.749900 Hz:             0.000589 *******************(WOW)
+
+   79         61718.750100 to         62499.999900 Hz:             0.000677 *********************(WOW)
+
+   80         62500.000100 to         63281.249900 Hz:             0.000767 ************************(WOW)
+
+   81         63281.250100 to         64062.499900 Hz:             0.000856 ***************************(WOW)
+
+   82         64062.500100 to         64843.749900 Hz:             0.000943 ******************************(WOW)
+
+   83         64843.750100 to         65624.999900 Hz:             0.001025 ********************************(WOW)
+
+   84         65625.000100 to         66406.249900 Hz:             0.001100 **********************************(WOW)
+
+   85         66406.250100 to         67187.499900 Hz:             0.001165 ************************************(WOW)
+
+   86         67187.500100 to         67968.749900 Hz:             0.001219 **************************************(WOW)
+
+   87         67968.750100 to         68749.999900 Hz:             0.001259 ***************************************(WOW)
+
+   88         68750.000100 to         69531.249900 Hz:             0.001285 ****************************************(WOW)
+
+   89         69531.250100 to         70312.499900 Hz:             0.001295 ****************************************(WOW)
+
+   90         70312.500100 to         71093.749900 Hz:             0.001289 ****************************************(WOW)
+
+   91         71093.750100 to         71874.999900 Hz:             0.001268 ****************************************(WOW)
+
+   92         71875.000100 to         72656.249900 Hz:             0.001231 ***************************************(WOW)
+
+   93         72656.250100 to         73437.499900 Hz:             0.001181 *************************************(WOW)
+
+   94         73437.500100 to         74218.749900 Hz:             0.001118 ***********************************(WOW)
+
+   95         74218.750100 to         74999.999900 Hz:             0.001045 *********************************(WOW)
+
+   96         75000.000100 to         75781.249900 Hz:             0.000964 ******************************(WOW)
+
+   97         75781.250100 to         76562.499900 Hz:             0.000878 ****************************(WOW)
+
+   98         76562.500100 to         77343.749900 Hz:             0.000788 *************************(WOW)
+
+   99         77343.750100 to         78124.999900 Hz:             0.000698 **********************(WOW)
+
+  100         78125.000100 to         78906.249900 Hz:             0.000609 *******************(WOW)
+
+  101         78906.250100 to         79687.499900 Hz:             0.000523 *****************(WOW)
+
+  102         79687.500100 to         80468.749900 Hz:             0.000443 **************(WOW)
+
+  103         80468.750100 to         81249.999900 Hz:             0.000368 ************(WOW)
+
+  104         81250.000100 to         82031.249900 Hz:             0.000301 **********(WOW)
+
+  105         82031.250100 to         82812.499900 Hz:             0.000242 ********(WOW)
+
+  106         82812.500100 to         83593.749900 Hz:             0.000190 ******(meh)
+
+  107         83593.750100 to         84374.999900 Hz:             0.000147 *****(meh)
+
+  108         84375.000100 to         85156.249900 Hz:             0.000111 ****(meh)
+
+  109         85156.250100 to         85937.499900 Hz:             0.000081 ***(meh)
+
+  110         85937.500100 to         86718.749900 Hz:             0.000058 **(meh)
+
+  111         86718.750100 to         87499.999900 Hz:             0.000040 **(meh)
+
+  112         87500.000100 to         88281.249900 Hz:             0.000027 *(meh)
+
+  113         88281.250100 to         89062.499900 Hz:             0.000017 *(meh)
+
+  114         89062.500100 to         89843.749900 Hz:             0.000011 *(meh)
+
+  115         89843.750100 to         90624.999900 Hz:             0.000006 *(meh)
+
+  116         90625.000100 to         91406.249900 Hz:             0.000003 *(meh)
+
+  117         91406.250100 to         92187.499900 Hz:             0.000002 *(meh)
+
+  118         92187.500100 to         92968.749900 Hz:             0.000001 *(meh)
+
+  119         92968.750100 to         93749.999900 Hz:             0.000000 *(meh)
+
+  120         93750.000100 to         94531.249900 Hz:             0.000000 *(meh)
+
+  121         94531.250100 to         95312.499900 Hz:             0.000000 *(meh)
+
+  122         95312.500100 to         96093.749900 Hz:             0.000000 *(meh)
+
+  123         96093.750100 to         96874.999900 Hz:             0.000000 *(meh)
+
+  124         96875.000100 to         97656.249900 Hz:             0.000000 *(meh)
+
+  125         97656.250100 to         98437.499900 Hz:             0.000000 *(meh)
+
+  126         98437.500100 to         99218.749900 Hz:             0.000000 *(meh)
+
+  127         99218.750100 to         99999.999900 Hz:             0.000000 *(meh)
+
+  128        100000.000100 to        100781.249900 Hz:             0.000000 *(meh)
+
+  129        100781.250100 to        101562.499900 Hz:             0.000000 *(meh)
+
+  130        101562.500100 to        102343.749900 Hz:             0.000000 *(meh)
+
+  131        102343.750100 to        103124.999900 Hz:             0.000000 *(meh)
+
+  132        103125.000100 to        103906.249900 Hz:             0.000000 *(meh)
+
+  133        103906.250100 to        104687.499900 Hz:             0.000000 *(meh)
+
+  134        104687.500100 to        105468.749900 Hz:             0.000000 *(meh)
+
+  135        105468.750100 to        106249.999900 Hz:             0.000000 *(meh)
+
+  136        106250.000100 to        107031.249900 Hz:             0.000000 *(meh)
+
+  137        107031.250100 to        107812.499900 Hz:             0.000000 *(meh)
+
+  138        107812.500100 to        108593.749900 Hz:             0.000000 *(meh)
+
+  139        108593.750100 to        109374.999900 Hz:             0.000000 *(meh)
+
+  140        109375.000100 to        110156.249900 Hz:             0.000000 *(meh)
+
+  141        110156.250100 to        110937.499900 Hz:             0.000000 *(meh)
+
+  142        110937.500100 to        111718.749900 Hz:             0.000000 *(meh)
+
+  143        111718.750100 to        112499.999900 Hz:             0.000000 *(meh)
+
+  144        112500.000100 to        113281.249900 Hz:             0.000000 *(meh)
+
+  145        113281.250100 to        114062.499900 Hz:             0.000000 *(meh)
+
+  146        114062.500100 to        114843.749900 Hz:             0.000000 *(meh)
+
+  147        114843.750100 to        115624.999900 Hz:             0.000000 *(meh)
+
+  148        115625.000100 to        116406.249900 Hz:             0.000000 *(meh)
+
+  149        116406.250100 to        117187.499900 Hz:             0.000000 *(meh)
+
+  150        117187.500100 to        117968.749900 Hz:             0.000000 *(meh)
+
+  151        117968.750100 to        118749.999900 Hz:             0.000000 *(meh)
+
+  152        118750.000100 to        119531.249900 Hz:             0.000000 *(meh)
+
+  153        119531.250100 to        120312.499900 Hz:             0.000000 *(meh)
+
+  154        120312.500100 to        121093.749900 Hz:             0.000000 *(meh)
+
+  155        121093.750100 to        121874.999900 Hz:             0.000000 *(meh)
+
+  156        121875.000100 to        122656.249900 Hz:             0.000000 *(meh)
+
+  157        122656.250100 to        123437.499900 Hz:             0.000000 *(meh)
+
+  158        123437.500100 to        124218.749900 Hz:             0.000000 *(meh)
+
+  159        124218.750100 to        124999.999900 Hz:             0.000000 *(meh)
+
+  160        125000.000100 to        125781.249900 Hz:             0.000000 *(meh)
+
+  161        125781.250100 to        126562.499900 Hz:             0.000000 *(meh)
+
+  162        126562.500100 to        127343.749900 Hz:             0.000000 *(meh)
+
+  163        127343.750100 to        128124.999900 Hz:             0.000000 *(meh)
+
+  164        128125.000100 to        128906.249900 Hz:             0.000000 *(meh)
+
+  165        128906.250100 to        129687.499900 Hz:             0.000000 *(meh)
+
+  166        129687.500100 to        130468.749900 Hz:             0.000000 *(meh)
+
+  167        130468.750100 to        131249.999900 Hz:             0.000000 *(meh)
+
+  168        131250.000100 to        132031.249900 Hz:             0.000000 *(meh)
+
+  169        132031.250100 to        132812.499900 Hz:             0.000000 *(meh)
+
+  170        132812.500100 to        133593.749900 Hz:             0.000000 *(meh)
+
+  171        133593.750100 to        134374.999900 Hz:             0.000000 *(meh)
+
+  172        134375.000100 to        135156.249900 Hz:             0.000000 *(meh)
+
+  173        135156.250100 to        135937.499900 Hz:             0.000000 *(meh)
+
+  174        135937.500100 to        136718.749900 Hz:             0.000000 *(meh)
+
+  175        136718.750100 to        137499.999900 Hz:             0.000000 *(meh)
+
+  176        137500.000100 to        138281.249900 Hz:             0.000000 *(meh)
+
+  177        138281.250100 to        139062.499900 Hz:             0.000000 *(meh)
+
+  178        139062.500100 to        139843.749900 Hz:             0.000000 *(meh)
+
+  179        139843.750100 to        140624.999900 Hz:             0.000000 *(meh)
+
+  180        140625.000100 to        141406.249900 Hz:             0.000000 *(meh)
+
+  181        141406.250100 to        142187.499900 Hz:             0.000000 *(meh)
+
+  182        142187.500100 to        142968.749900 Hz:             0.000000 *(meh)
+
+  183        142968.750100 to        143749.999900 Hz:             0.000000 *(meh)
+
+  184        143750.000100 to        144531.249900 Hz:             0.000000 *(meh)
+
+  185        144531.250100 to        145312.499900 Hz:             0.000000 *(meh)
+
+  186        145312.500100 to        146093.749900 Hz:             0.000000 *(meh)
+
+  187        146093.750100 to        146874.999900 Hz:             0.000000 *(meh)
+
+  188        146875.000100 to        147656.249900 Hz:             0.000000 *(meh)
+
+  189        147656.250100 to        148437.499900 Hz:             0.000000 *(meh)
+
+  190        148437.500100 to        149218.749900 Hz:             0.000000 *(meh)
+
+  191        149218.750100 to        149999.999900 Hz:             0.000000 *(meh)
+
+  192        150000.000100 to        150781.249900 Hz:             0.000000 *(meh)
+  193        150781.250100 to        151562.499900 Hz:             0.000000 *(meh)
+  194        151562.500100 to        152343.749900 Hz:             0.000000 *(meh)
+  195        152343.750100 to        153124.999900 Hz:             0.000000 *(meh)
+  196        153125.000100 to        153906.249900 Hz:             0.000000 *(meh)
+  197        153906.250100 to        154687.499900 Hz:             0.000000 *(meh)
+  198        154687.500100 to        155468.749900 Hz:             0.000000 *(meh)
+  199        155468.750100 to        156249.999900 Hz:             0.000000 *(meh)
+  200        156250.000100 to        157031.249900 Hz:             0.000000 *(meh)
+  201        157031.250100 to        157812.499900 Hz:             0.000000 *(meh)
+  202        157812.500100 to        158593.749900 Hz:             0.000000 *(meh)
+  203        158593.750100 to        159374.999900 Hz:             0.000000 *(meh)
+  204        159375.000100 to        160156.249900 Hz:             0.000000 *(meh)
+  205        160156.250100 to        160937.499900 Hz:             0.000000 *(meh)
+  206        160937.500100 to        161718.749900 Hz:             0.000000 *(meh)
+  207        161718.750100 to        162499.999900 Hz:             0.000000 *(meh)
+  208        162500.000100 to        163281.249900 Hz:             0.000000 *(meh)
+  209        163281.250100 to        164062.499900 Hz:             0.000000 *(meh)
+  210        164062.500100 to        164843.749900 Hz:             0.000000 *(meh)
+  211        164843.750100 to        165624.999900 Hz:             0.000000 *(meh)
+  212        165625.000100 to        166406.249900 Hz:             0.000000 *(meh)
+  213        166406.250100 to        167187.499900 Hz:             0.000000 *(meh)
+  214        167187.500100 to        167968.749900 Hz:             0.000000 *(meh)
+  215        167968.750100 to        168749.999900 Hz:             0.000000 *(meh)
+  216        168750.000100 to        169531.249900 Hz:             0.000000 *(meh)
+  217        169531.250100 to        170312.499900 Hz:             0.000000 *(meh)
+  218        170312.500100 to        171093.749900 Hz:             0.000000 *(meh)
+  219        171093.750100 to        171874.999900 Hz:             0.000000 *(meh)
+  220        171875.000100 to        172656.249900 Hz:             0.000000 *(meh)
+  221        172656.250100 to        173437.499900 Hz:             0.000000 *(meh)
+  222        173437.500100 to        174218.749900 Hz:             0.000000 *(meh)
+  223        174218.750100 to        174999.999900 Hz:             0.000000 *(meh)
+  224        175000.000100 to        175781.249900 Hz:             0.000000 *(meh)
+  225        175781.250100 to        176562.499900 Hz:             0.000000 *(meh)
+  226        176562.500100 to        177343.749900 Hz:             0.000000 *(meh)
+  227        177343.750100 to        178124.999900 Hz:             0.000000 *(meh)
+  228        178125.000100 to        178906.249900 Hz:             0.000000 *(meh)
+  229        178906.250100 to        179687.499900 Hz:             0.000000 *(meh)
+  230        179687.500100 to        180468.749900 Hz:             0.000000 *(meh)
+  231        180468.750100 to        181249.999900 Hz:             0.000000 *(meh)
+  232        181250.000100 to        182031.249900 Hz:             0.000000 *(meh)
+  233        182031.250100 to        182812.499900 Hz:             0.000000 *(meh)
+  234        182812.500100 to        183593.749900 Hz:             0.000000 *(meh)
+  235        183593.750100 to        184374.999900 Hz:             0.000000 *(meh)
+  236        184375.000100 to        185156.249900 Hz:             0.000000 *(meh)
+  237        185156.250100 to        185937.499900 Hz:             0.000000 *(meh)
+  238        185937.500100 to        186718.749900 Hz:             0.000000 *(meh)
+  239        186718.750100 to        187499.999900 Hz:             0.000000 *(meh)
+  240        187500.000100 to        188281.249900 Hz:             0.000000 *(meh)
+  241        188281.250100 to        189062.499900 Hz:             0.000000 *(meh)
+  242        189062.500100 to        189843.749900 Hz:             0.000000 *(meh)
+  243        189843.750100 to        190624.999900 Hz:             0.000000 *(meh)
+  244        190625.000100 to        191406.249900 Hz:             0.000000 *(meh)
+  245        191406.250100 to        192187.499900 Hz:             0.000000 *(meh)
+  246        192187.500100 to        192968.749900 Hz:             0.000000 *(meh)
+  247        192968.750100 to        193749.999900 Hz:             0.000000 *(meh)
+  248        193750.000100 to        194531.249900 Hz:             0.000000 *(meh)
+  249        194531.250100 to        195312.499900 Hz:             0.000000 *(meh)
+  250        195312.500100 to        196093.749900 Hz:             0.000000 *(meh)
+  251        196093.750100 to        196874.999900 Hz:             0.000000 *(meh)
+  252        196875.000100 to        197656.249900 Hz:             0.000000 *(meh)
+  253        197656.250100 to        198437.499900 Hz:             0.000000 *(meh)
+  254        198437.500100 to        199218.749900 Hz:             0.000000 *(meh)
+  255        199218.750100 to        199999.999900 Hz:             0.000000 *(meh)
+Resource usages (all threads):
+User time        537.827095 seconds
+System time      0.031041 seconds
+Page faults      7268
+Page swaps       0
+Blocks of I/O    0
+Signals caught   0
+Context switches 431
+Analysis took 68.055056 seconds
+POSSIBLE ALIENS 57031.250100-82812.499900 HZ (CENTER 69921.875000 HZ)
+537.96user 0.10system 1:08.27elapsed 788%CPU (0avgtext+0avgdata 96536maxresident)k
+80inputs+0outputs (2major+7789minor)pagefaults 0swaps
+amdahl-1 32 256 8 8: Our time: 68270
+/home/arw5546/cs213/setilab/setilab-handout/.tmp.gdfCazgSAz/p_band_scan bin /home/cs213lab/www/meta/arw5546-mdq5477.sig/tmp-3509.sig 400000 32 256 16 16
+type:     Binary
+        file:     /home/cs213lab/www/meta/arw5546-mdq5477.sig/tmp-3509.sig
+        Fs:       400000.000000 Hz
+        order:    32
+        bands:    256
+        procs:    16
+        threads:  16
+Load or map file
+Read 12000000 samples
+Removing DC component of 0.002699
+signal average power:     1.156557
+    0             0.000100 to           781.249900 Hz:             0.000024 *(meh)
+    1           781.250100 to          1562.499900 Hz:             0.000024 *(meh)
+    2          1562.500100 to          2343.749900 Hz:             0.000024 *(meh)
+    3          2343.750100 to          3124.999900 Hz:             0.000023 *(meh)
+    4          3125.000100 to          3906.249900 Hz:             0.000022 *(meh)
+    5          3906.250100 to          4687.499900 Hz:             0.000022 *(meh)
+    6          4687.500100 to          5468.749900 Hz:             0.000021 *(meh)
+    7          5468.750100 to          6249.999900 Hz:             0.000020 *(meh)
+    8          6250.000100 to          7031.249900 Hz:             0.000019 *(meh)
+    9          7031.250100 to          7812.499900 Hz:             0.000018 *(meh)
+   10          7812.500100 to          8593.749900 Hz:             0.000017 *(meh)
+   11          8593.750100 to          9374.999900 Hz:             0.000016 *(meh)
+   12          9375.000100 to         10156.249900 Hz:             0.000015 *(meh)
+   13         10156.250100 to         10937.499900 Hz:             0.000015 *(meh)
+   14         10937.500100 to         11718.749900 Hz:             0.000014 *(meh)
+   15         11718.750100 to         12499.999900 Hz:             0.000013 *(meh)
+   16         12500.000100 to         13281.249900 Hz:             0.000012 *(meh)
+   17         13281.250100 to         14062.499900 Hz:             0.000012 *(meh)
+   18         14062.500100 to         14843.749900 Hz:             0.000011 *(meh)
+   19         14843.750100 to         15624.999900 Hz:             0.000010 *(meh)
+   20         15625.000100 to         16406.249900 Hz:             0.000010 *(meh)
+   21         16406.250100 to         17187.499900 Hz:             0.000009 *(meh)
+   22         17187.500100 to         17968.749900 Hz:             0.000008 *(meh)
+   23         17968.750100 to         18749.999900 Hz:             0.000008 *(meh)
+   24         18750.000100 to         19531.249900 Hz:             0.000007 *(meh)
+   25         19531.250100 to         20312.499900 Hz:             0.000006 *(meh)
+   26         20312.500100 to         21093.749900 Hz:             0.000006 *(meh)
+   27         21093.750100 to         21874.999900 Hz:             0.000005 *(meh)
+   28         21875.000100 to         22656.249900 Hz:             0.000004 *(meh)
+   29         22656.250100 to         23437.499900 Hz:             0.000004 *(meh)
+   30         23437.500100 to         24218.749900 Hz:             0.000003 *(meh)
+   31         24218.750100 to         24999.999900 Hz:             0.000003 *(meh)
+   32         25000.000100 to         25781.249900 Hz:             0.000003 *(meh)
+   33         25781.250100 to         26562.499900 Hz:             0.000002 *(meh)
+   34         26562.500100 to         27343.749900 Hz:             0.000002 *(meh)
+   35         27343.750100 to         28124.999900 Hz:             0.000002 *(meh)
+   36         28125.000100 to         28906.249900 Hz:             0.000002 *(meh)
+   37         28906.250100 to         29687.499900 Hz:             0.000002 *(meh)
+   38         29687.500100 to         30468.749900 Hz:             0.000002 *(meh)
+   39         30468.750100 to         31249.999900 Hz:             0.000003 *(meh)
+   40         31250.000100 to         32031.249900 Hz:             0.000003 *(meh)
+   41         32031.250100 to         32812.499900 Hz:             0.000003 *(meh)
+   42         32812.500100 to         33593.749900 Hz:             0.000003 *(meh)
+   43         33593.750100 to         34374.999900 Hz:             0.000004 *(meh)
+   44         34375.000100 to         35156.249900 Hz:             0.000004 *(meh)
+   45         35156.250100 to         35937.499900 Hz:             0.000004 *(meh)
+   46         35937.500100 to         36718.749900 Hz:             0.000004 *(meh)
+   47         36718.750100 to         37499.999900 Hz:             0.000005 *(meh)
+   48         37500.000100 to         38281.249900 Hz:             0.000005 *(meh)
+   49         38281.250100 to         39062.499900 Hz:             0.000005 *(meh)
+   50         39062.500100 to         39843.749900 Hz:             0.000005 *(meh)
+   51         39843.750100 to         40624.999900 Hz:             0.000005 *(meh)
+   52         40625.000100 to         41406.249900 Hz:             0.000005 *(meh)
+   53         41406.250100 to         42187.499900 Hz:             0.000005 *(meh)
+   54         42187.500100 to         42968.749900 Hz:             0.000004 *(meh)
+   55         42968.750100 to         43749.999900 Hz:             0.000004 *(meh)
+   56         43750.000100 to         44531.249900 Hz:             0.000004 *(meh)
+   57         44531.250100 to         45312.499900 Hz:             0.000003 *(meh)
+   58         45312.500100 to         46093.749900 Hz:             0.000003 *(meh)
+   59         46093.750100 to         46874.999900 Hz:             0.000003 *(meh)
+   60         46875.000100 to         47656.249900 Hz:             0.000003 *(meh)
+   61         47656.250100 to         48437.499900 Hz:             0.000004 *(meh)
+   62         48437.500100 to         49218.749900 Hz:             0.000005 *(meh)
+   63         49218.750100 to         49999.999900 Hz:             0.000007 *(meh)
+   64         50000.000100 to         50781.249900 Hz:             0.000011 *(meh)
+   65         50781.250100 to         51562.499900 Hz:             0.000017 *(meh)
+   66         51562.500100 to         52343.749900 Hz:             0.000026 *(meh)
+   67         52343.750100 to         53124.999900 Hz:             0.000039 **(meh)
+   68         53125.000100 to         53906.249900 Hz:             0.000056 **(meh)
+   69         53906.250100 to         54687.499900 Hz:             0.000078 ***(meh)
+   70         54687.500100 to         55468.749900 Hz:             0.000106 ****(meh)
+   71         55468.750100 to         56249.999900 Hz:             0.000140 *****(meh)
+   72         56250.000100 to         57031.249900 Hz:             0.000182 ******(meh)
+   73         57031.250100 to         57812.499900 Hz:             0.000232 ********(WOW)
+   74         57812.500100 to         58593.749900 Hz:             0.000289 *********(WOW)
+   75         58593.750100 to         59374.999900 Hz:             0.000354 ***********(WOW)
+   76         59375.000100 to         60156.249900 Hz:             0.000426 **************(WOW)
+   77         60156.250100 to         60937.499900 Hz:             0.000505 ****************(WOW)
+   78         60937.500100 to         61718.749900 Hz:             0.000589 *******************(WOW)
+   79         61718.750100 to         62499.999900 Hz:             0.000677 *********************(WOW)
+   80         62500.000100 to         63281.249900 Hz:             0.000767 ************************(WOW)
+   81         63281.250100 to         64062.499900 Hz:             0.000856 ***************************(WOW)
+   82         64062.500100 to         64843.749900 Hz:             0.000943 ******************************(WOW)
+   83         64843.750100 to         65624.999900 Hz:             0.001025 ********************************(WOW)
+   84         65625.000100 to         66406.249900 Hz:             0.001100 **********************************(WOW)
+   85         66406.250100 to         67187.499900 Hz:             0.001165 ************************************(WOW)
+   86         67187.500100 to         67968.749900 Hz:             0.001219 **************************************(WOW)
+   87         67968.750100 to         68749.999900 Hz:             0.001259 ***************************************(WOW)
+   88         68750.000100 to         69531.249900 Hz:             0.001285 ****************************************(WOW)
+   89         69531.250100 to         70312.499900 Hz:             0.001295 ****************************************(WOW)
+   90         70312.500100 to         71093.749900 Hz:             0.001289 ****************************************(WOW)
+   91         71093.750100 to         71874.999900 Hz:             0.001268 ****************************************(WOW)
+   92         71875.000100 to         72656.249900 Hz:             0.001231 ***************************************(WOW)
+   93         72656.250100 to         73437.499900 Hz:             0.001181 *************************************(WOW)
+   94         73437.500100 to         74218.749900 Hz:             0.001118 ***********************************(WOW)
+   95         74218.750100 to         74999.999900 Hz:             0.001045 *********************************(WOW)
+   96         75000.000100 to         75781.249900 Hz:             0.000964 ******************************(WOW)
+   97         75781.250100 to         76562.499900 Hz:             0.000878 ****************************(WOW)
+   98         76562.500100 to         77343.749900 Hz:             0.000788 *************************(WOW)
+   99         77343.750100 to         78124.999900 Hz:             0.000698 **********************(WOW)
+  100         78125.000100 to         78906.249900 Hz:             0.000609 *******************(WOW)
+  101         78906.250100 to         79687.499900 Hz:             0.000523 *****************(WOW)
+  102         79687.500100 to         80468.749900 Hz:             0.000443 **************(WOW)
+  103         80468.750100 to         81249.999900 Hz:             0.000368 ************(WOW)
+  104         81250.000100 to         82031.249900 Hz:             0.000301 **********(WOW)
+  105         82031.250100 to         82812.499900 Hz:             0.000242 ********(WOW)
+  106         82812.500100 to         83593.749900 Hz:             0.000190 ******(meh)
+  107         83593.750100 to         84374.999900 Hz:             0.000147 *****(meh)
+  108         84375.000100 to         85156.249900 Hz:             0.000111 ****(meh)
+  109         85156.250100 to         85937.499900 Hz:             0.000081 ***(meh)
+  110         85937.500100 to         86718.749900 Hz:             0.000058 **(meh)
+  111         86718.750100 to         87499.999900 Hz:             0.000040 **(meh)
+  112         87500.000100 to         88281.249900 Hz:             0.000027 *(meh)
+  113         88281.250100 to         89062.499900 Hz:             0.000017 *(meh)
+  114         89062.500100 to         89843.749900 Hz:             0.000011 *(meh)
+  115         89843.750100 to         90624.999900 Hz:             0.000006 *(meh)
+  116         90625.000100 to         91406.249900 Hz:             0.000003 *(meh)
+  117         91406.250100 to         92187.499900 Hz:             0.000002 *(meh)
+  118         92187.500100 to         92968.749900 Hz:             0.000001 *(meh)
+  119         92968.750100 to         93749.999900 Hz:             0.000000 *(meh)
+  120         93750.000100 to         94531.249900 Hz:             0.000000 *(meh)
+  121         94531.250100 to         95312.499900 Hz:             0.000000 *(meh)
+  122         95312.500100 to         96093.749900 Hz:             0.000000 *(meh)
+  123         96093.750100 to         96874.999900 Hz:             0.000000 *(meh)
+  124         96875.000100 to         97656.249900 Hz:             0.000000 *(meh)
+  125         97656.250100 to         98437.499900 Hz:             0.000000 *(meh)
+  126         98437.500100 to         99218.749900 Hz:             0.000000 *(meh)
+  127         99218.750100 to         99999.999900 Hz:             0.000000 *(meh)
+  128        100000.000100 to        100781.249900 Hz:             0.000000 *(meh)
+  129        100781.250100 to        101562.499900 Hz:             0.000000 *(meh)
+  130        101562.500100 to        102343.749900 Hz:             0.000000 *(meh)
+  131        102343.750100 to        103124.999900 Hz:             0.000000 *(meh)
+  132        103125.000100 to        103906.249900 Hz:             0.000000 *(meh)
+  133        103906.250100 to        104687.499900 Hz:             0.000000 *(meh)
+  134        104687.500100 to        105468.749900 Hz:             0.000000 *(meh)
+  135        105468.750100 to        106249.999900 Hz:             0.000000 *(meh)
+  136        106250.000100 to        107031.249900 Hz:             0.000000 *(meh)
+  137        107031.250100 to        107812.499900 Hz:             0.000000 *(meh)
+  138        107812.500100 to        108593.749900 Hz:             0.000000 *(meh)
+  139        108593.750100 to        109374.999900 Hz:             0.000000 *(meh)
+  140        109375.000100 to        110156.249900 Hz:             0.000000 *(meh)
+  141        110156.250100 to        110937.499900 Hz:             0.000000 *(meh)
+  142        110937.500100 to        111718.749900 Hz:             0.000000 *(meh)
+  143        111718.750100 to        112499.999900 Hz:             0.000000 *(meh)
+  144        112500.000100 to        113281.249900 Hz:             0.000000 *(meh)
+  145        113281.250100 to        114062.499900 Hz:             0.000000 *(meh)
+  146        114062.500100 to        114843.749900 Hz:             0.000000 *(meh)
+  147        114843.750100 to        115624.999900 Hz:             0.000000 *(meh)
+  148        115625.000100 to        116406.249900 Hz:             0.000000 *(meh)
+  149        116406.250100 to        117187.499900 Hz:             0.000000 *(meh)
+  150        117187.500100 to        117968.749900 Hz:             0.000000 *(meh)
+  151        117968.750100 to        118749.999900 Hz:             0.000000 *(meh)
+  152        118750.000100 to        119531.249900 Hz:             0.000000 *(meh)
+  153        119531.250100 to        120312.499900 Hz:             0.000000 *(meh)
+  154        120312.500100 to        121093.749900 Hz:             0.000000 *(meh)
+  155        121093.750100 to        121874.999900 Hz:             0.000000 *(meh)
+  156        121875.000100 to        122656.249900 Hz:             0.000000 *(meh)
+  157        122656.250100 to        123437.499900 Hz:             0.000000 *(meh)
+  158        123437.500100 to        124218.749900 Hz:             0.000000 *(meh)
+  159        124218.750100 to        124999.999900 Hz:             0.000000 *(meh)
+  160        125000.000100 to        125781.249900 Hz:             0.000000 *(meh)
+  161        125781.250100 to        126562.499900 Hz:             0.000000 *(meh)
+  162        126562.500100 to        127343.749900 Hz:             0.000000 *(meh)
+  163        127343.750100 to        128124.999900 Hz:             0.000000 *(meh)
+  164        128125.000100 to        128906.249900 Hz:             0.000000 *(meh)
+  165        128906.250100 to        129687.499900 Hz:             0.000000 *(meh)
+  166        129687.500100 to        130468.749900 Hz:             0.000000 *(meh)
+  167        130468.750100 to        131249.999900 Hz:             0.000000 *(meh)
+  168        131250.000100 to        132031.249900 Hz:             0.000000 *(meh)
+  169        132031.250100 to        132812.499900 Hz:             0.000000 *(meh)
+  170        132812.500100 to        133593.749900 Hz:             0.000000 *(meh)
+  171        133593.750100 to        134374.999900 Hz:             0.000000 *(meh)
+  172        134375.000100 to        135156.249900 Hz:             0.000000 *(meh)
+  173        135156.250100 to        135937.499900 Hz:             0.000000 *(meh)
+  174        135937.500100 to        136718.749900 Hz:             0.000000 *(meh)
+  175        136718.750100 to        137499.999900 Hz:             0.000000 *(meh)
+  176        137500.000100 to        138281.249900 Hz:             0.000000 *(meh)
+  177        138281.250100 to        139062.499900 Hz:             0.000000 *(meh)
+  178        139062.500100 to        139843.749900 Hz:             0.000000 *(meh)
+  179        139843.750100 to        140624.999900 Hz:             0.000000 *(meh)
+  180        140625.000100 to        141406.249900 Hz:             0.000000 *(meh)
+  181        141406.250100 to        142187.499900 Hz:             0.000000 *(meh)
+  182        142187.500100 to        142968.749900 Hz:             0.000000 *(meh)
+  183        142968.750100 to        143749.999900 Hz:             0.000000 *(meh)
+  184        143750.000100 to        144531.249900 Hz:             0.000000 *(meh)
+  185        144531.250100 to        145312.499900 Hz:             0.000000 *(meh)
+  186        145312.500100 to        146093.749900 Hz:             0.000000 *(meh)
+  187        146093.750100 to        146874.999900 Hz:             0.000000 *(meh)
+  188        146875.000100 to        147656.249900 Hz:             0.000000 *(meh)
+  189        147656.250100 to        148437.499900 Hz:             0.000000 *(meh)
+  190        148437.500100 to        149218.749900 Hz:             0.000000 *(meh)
+  191        149218.750100 to        149999.999900 Hz:             0.000000 *(meh)
+  192        150000.000100 to        150781.249900 Hz:             0.000000 *(meh)
+  193        150781.250100 to        151562.499900 Hz:             0.000000 *(meh)
+  194        151562.500100 to        152343.749900 Hz:             0.000000 *(meh)
+  195        152343.750100 to        153124.999900 Hz:             0.000000 *(meh)
+  196        153125.000100 to        153906.249900 Hz:             0.000000 *(meh)
+  197        153906.250100 to        154687.499900 Hz:             0.000000 *(meh)
+  198        154687.500100 to        155468.749900 Hz:             0.000000 *(meh)
+  199        155468.750100 to        156249.999900 Hz:             0.000000 *(meh)
+  200        156250.000100 to        157031.249900 Hz:             0.000000 *(meh)
+  201        157031.250100 to        157812.499900 Hz:             0.000000 *(meh)
+  202        157812.500100 to        158593.749900 Hz:             0.000000 *(meh)
+  203        158593.750100 to        159374.999900 Hz:             0.000000 *(meh)
+  204        159375.000100 to        160156.249900 Hz:             0.000000 *(meh)
+  205        160156.250100 to        160937.499900 Hz:             0.000000 *(meh)
+  206        160937.500100 to        161718.749900 Hz:             0.000000 *(meh)
+  207        161718.750100 to        162499.999900 Hz:             0.000000 *(meh)
+  208        162500.000100 to        163281.249900 Hz:             0.000000 *(meh)
+  209        163281.250100 to        164062.499900 Hz:             0.000000 *(meh)
+  210        164062.500100 to        164843.749900 Hz:             0.000000 *(meh)
+  211        164843.750100 to        165624.999900 Hz:             0.000000 *(meh)
+  212        165625.000100 to        166406.249900 Hz:             0.000000 *(meh)
+  213        166406.250100 to        167187.499900 Hz:             0.000000 *(meh)
+  214        167187.500100 to        167968.749900 Hz:             0.000000 *(meh)
+  215        167968.750100 to        168749.999900 Hz:             0.000000 *(meh)
+  216        168750.000100 to        169531.249900 Hz:             0.000000 *(meh)
+  217        169531.250100 to        170312.499900 Hz:             0.000000 *(meh)
+  218        170312.500100 to        171093.749900 Hz:             0.000000 *(meh)
+  219        171093.750100 to        171874.999900 Hz:             0.000000 *(meh)
+  220        171875.000100 to        172656.249900 Hz:             0.000000 *(meh)
+  221        172656.250100 to        173437.499900 Hz:             0.000000 *(meh)
+  222        173437.500100 to        174218.749900 Hz:             0.000000 *(meh)
+  223        174218.750100 to        174999.999900 Hz:             0.000000 *(meh)
+  224        175000.000100 to        175781.249900 Hz:             0.000000 *(meh)
+  225        175781.250100 to        176562.499900 Hz:             0.000000 *(meh)
+  226        176562.500100 to        177343.749900 Hz:             0.000000 *(meh)
+  227        177343.750100 to        178124.999900 Hz:             0.000000 *(meh)
+  228        178125.000100 to        178906.249900 Hz:             0.000000 *(meh)
+  229        178906.250100 to        179687.499900 Hz:             0.000000 *(meh)
+  230        179687.500100 to        180468.749900 Hz:             0.000000 *(meh)
+  231        180468.750100 to        181249.999900 Hz:             0.000000 *(meh)
+  232        181250.000100 to        182031.249900 Hz:             0.000000 *(meh)
+  233        182031.250100 to        182812.499900 Hz:             0.000000 *(meh)
+  234        182812.500100 to        183593.749900 Hz:             0.000000 *(meh)
+  235        183593.750100 to        184374.999900 Hz:             0.000000 *(meh)
+  236        184375.000100 to        185156.249900 Hz:             0.000000 *(meh)
+  237        185156.250100 to        185937.499900 Hz:             0.000000 *(meh)
+  238        185937.500100 to        186718.749900 Hz:             0.000000 *(meh)
+  239        186718.750100 to        187499.999900 Hz:             0.000000 *(meh)
+  240        187500.000100 to        188281.249900 Hz:             0.000000 *(meh)
+  241        188281.250100 to        189062.499900 Hz:             0.000000 *(meh)
+  242        189062.500100 to        189843.749900 Hz:             0.000000 *(meh)
+  243        189843.750100 to        190624.999900 Hz:             0.000000 *(meh)
+  244        190625.000100 to        191406.249900 Hz:             0.000000 *(meh)
+  245        191406.250100 to        192187.499900 Hz:             0.000000 *(meh)
+  246        192187.500100 to        192968.749900 Hz:             0.000000 *(meh)
+  247        192968.750100 to        193749.999900 Hz:             0.000000 *(meh)
+  248        193750.000100 to        194531.249900 Hz:             0.000000 *(meh)
+  249        194531.250100 to        195312.499900 Hz:             0.000000 *(meh)
+  250        195312.500100 to        196093.749900 Hz:             0.000000 *(meh)
+  251        196093.750100 to        196874.999900 Hz:             0.000000 *(meh)
+  252        196875.000100 to        197656.249900 Hz:             0.000000 *(meh)
+  253        197656.250100 to        198437.499900 Hz:             0.000000 *(meh)
+  254        198437.500100 to        199218.749900 Hz:             0.000000 *(meh)
+  255        199218.750100 to        199999.999900 Hz:             0.000000 *(meh)
+Resource usages:
+         User time        306.759990 seconds
+         System time      0.023218 seconds
+         Page faults      3533
+         Page swaps       0
+         Blocks of I/O    0
+         Signals caught   0
+         Context switches 159
+timing overhead is at least 52 cycles
+Analysis took 25308343112 cycles (9.061844 seconds) by cycle count, timing overhead=52 cycles
+Note that cycle count only makes sense if the thread stayed on one core
+Analysis took 19.512977 seconds by basic timing
+POSSIBLE ALIENS 57031.250100-82812.499900 HZ (CENTER 69921.875000 HZ)
+306.79user 0.07system 0:19.61elapsed 1564%CPU (0avgtext+0avgdata 96696maxresident)k
+0inputs+0outputs (0major+4066minor)pagefaults 0swaps
+amdahl-1 32 256 16 16: Their time: 19610
+/home/cs213lab/HANDOUT/p_band_scan bin /home/cs213lab/www/meta/arw5546-mdq5477.sig/tmp-3509.sig 400000 32 256 16 16
+type:     Binary
+file:     /home/cs213lab/www/meta/arw5546-mdq5477.sig/tmp-3509.sig
+Fs:       400000.000000 Hz
+order:    32
+bands:    256
+threads:  16
+procs:    16
+Load or map file
+Read 12000000 samples
+work: [16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16]
+ginfo.block: [0, 16, 32, 48, 64, 80, 96, 112, 128, 144, 160, 176, 192, 208, 224, 240, 256]
+Removing DC component of 0.002699
+signal average power:     1.156557
+(12) Resource usages (thread 12):
+(12) User time        33.553943 seconds
+(12) System time      0.015886 seconds
+(12) Page faults      2639
+(12) Page swaps       0
+(12) Blocks of I/O    0
+(12) Signals caught   0
+(12) Context switches 10
+(13) Resource usages (thread 13):
+(13) User time        33.551634 seconds
+(13) System time      0.018868 seconds
+(13) Page faults      2721
+(13) Page swaps       0
+(13) Blocks of I/O    0
+(13) Signals caught   0
+(13) Context switches 8
+(10) Resource usages (thread 10):
+(10) User time        33.556643 seconds
+(10) System time      0.013885 seconds
+(10) Page faults      2635
+(10) Page swaps       0
+(10) Blocks of I/O    0
+(10) Signals caught   0
+(10) Context switches 10
+(11) Resource usages (thread 11):
+(11) User time        33.556170 seconds
+(11) System time      0.014879 seconds
+(11) Page faults      2495
+(11) Page swaps       0
+(11) Blocks of I/O    0
+(11) Signals caught   0
+(11) Context switches 12
+(7) Resource usages (thread 7):
+(7) User time        33.552796 seconds
+(7) System time      0.012895 seconds
+(7) Page faults      1972
+(7) Page swaps       0
+(7) Blocks of I/O    0
+(7) Signals caught   0
+(7) Context switches 10
+(4) Resource usages (thread 4):
+(4) User time        33.554180 seconds
+(4) System time      0.006928 seconds
+(4) Page faults      1354
+(4) Page swaps       0
+(4) Blocks of I/O    0
+(4) Signals caught   0
+(4) Context switches 8
+(5) Resource usages (thread 5):
+(5) User time        33.579474 seconds
+(5) System time      0.002975 seconds
+(5) Page faults      386
+(5) Page swaps       0
+(5) Blocks of I/O    0
+(5) Signals caught   0
+(5) Context switches 10
+(2) Resource usages (thread 2):
+(2) User time        33.590088 seconds
+(2) System time      0.004960 seconds
+(2) Page faults      509
+(2) Page swaps       0
+(2) Blocks of I/O    0
+(2) Signals caught   0
+(2) Context switches 9
+(15) Resource usages (thread 15):
+(15) User time        33.589601 seconds
+(15) System time      0.000000 seconds
+(15) Page faults      155
+(15) Page swaps       0
+(15) Blocks of I/O    0
+(15) Signals caught   0
+(15) Context switches 9
+(3) Resource usages (thread 3):
+(3) User time        33.603901 seconds
+(3) System time      0.001980 seconds
+(3) Page faults      467
+(3) Page swaps       0
+(3) Blocks of I/O    0
+(3) Signals caught   0
+(3) Context switches 9
+(14) Resource usages (thread 14):
+(14) User time        33.590060 seconds
+(14) System time      0.000000 seconds
+(14) Page faults      86
+(14) Page swaps       0
+(14) Blocks of I/O    0
+(14) Signals caught   0
+(14) Context switches 12
+(6) Resource usages (thread 6):
+(6) User time        33.616599 seconds
+(6) System time      0.001983 seconds
+(6) Page faults      270
+(6) Page swaps       0
+(6) Blocks of I/O    0
+(6) Signals caught   0
+(6) Context switches 9
+(1) Resource usages (thread 1):
+(1) User time        33.645191 seconds
+(1) System time      0.000000 seconds
+(1) Page faults      26
+(1) Page swaps       0
+(1) Blocks of I/O    0
+(1) Signals caught   0
+(1) Context switches 9
+(9) Resource usages (thread 9):
+(9) User time        33.654899 seconds
+(9) System time      0.000000 seconds
+(9) Page faults      24
+(9) Page swaps       0
+(9) Blocks of I/O    0
+(9) Signals caught   0
+(9) Context switches 10
+(8) Resource usages (thread 8):
+(8) User time        33.696586 seconds
+(8) System time      0.000992 seconds
+(8) Page faults      25
+(8) Page swaps       0
+(8) Blocks of I/O    0
+(8) Signals caught   0
+(8) Context switches 21
+(0) Resource usages (thread 0):
+(0) User time        33.732131 seconds
+(0) System time      0.000781 seconds
+(0) Page faults      30
+(0) Page swaps       0
+(0) Blocks of I/O    0
+(0) Signals caught   0
+(0) Context switches 114
+    0             0.000100 to           781.249900 Hz:             0.000024 *(meh)
+    1           781.250100 to          1562.499900 Hz:             0.000024 *(meh)
+    2          1562.500100 to          2343.749900 Hz:             0.000024 *(meh)
+    3          2343.750100 to          3124.999900 Hz:             0.000023 *(meh)
+    4          3125.000100 to          3906.249900 Hz:             0.000022 *(meh)
+    5          3906.250100 to          4687.499900 Hz:             0.000022 *(meh)
+    6          4687.500100 to          5468.749900 Hz:             0.000021 *(meh)
+    7          5468.750100 to          6249.999900 Hz:             0.000020 *(meh)
+    8          6250.000100 to          7031.249900 Hz:             0.000019 *(meh)
+    9          7031.250100 to          7812.499900 Hz:             0.000018 *(meh)
+   10          7812.500100 to          8593.749900 Hz:             0.000017 *(meh)
+   11          8593.750100 to          9374.999900 Hz:             0.000016 *(meh)
+   12          9375.000100 to         10156.249900 Hz:             0.000015 *(meh)
+   13         10156.250100 to         10937.499900 Hz:             0.000015 *(meh)
+   14         10937.500100 to         11718.749900 Hz:             0.000014 *(meh)
+   15         11718.750100 to         12499.999900 Hz:             0.000013 *(meh)
+   16         12500.000100 to         13281.249900 Hz:             0.000012 *(meh)
+   17         13281.250100 to         14062.499900 Hz:             0.000012 *(meh)
+   18         14062.500100 to         14843.749900 Hz:             0.000011 *(meh)
+   19         14843.750100 to         15624.999900 Hz:             0.000010 *(meh)
+   20         15625.000100 to         16406.249900 Hz:             0.000010 *(meh)
+   21         16406.250100 to         17187.499900 Hz:             0.000009 *(meh)
+   22         17187.500100 to         17968.749900 Hz:             0.000008 *(meh)
+   23         17968.750100 to         18749.999900 Hz:             0.000008 *(meh)
+   24         18750.000100 to         19531.249900 Hz:             0.000007 *(meh)
+   25         19531.250100 to         20312.499900 Hz:             0.000006 *(meh)
+   26         20312.500100 to         21093.749900 Hz:             0.000006 *(meh)
+   27         21093.750100 to         21874.999900 Hz:             0.000005 *(meh)
+   28         21875.000100 to         22656.249900 Hz:             0.000004 *(meh)
+   29         22656.250100 to         23437.499900 Hz:             0.000004 *(meh)
+   30         23437.500100 to         24218.749900 Hz:             0.000003 *(meh)
+   31         24218.750100 to         24999.999900 Hz:             0.000003 *(meh)
+   32         25000.000100 to         25781.249900 Hz:             0.000003 *(meh)
+   33         25781.250100 to         26562.499900 Hz:             0.000002 *(meh)
+   34         26562.500100 to         27343.749900 Hz:             0.000002 *(meh)
+   35         27343.750100 to         28124.999900 Hz:             0.000002 *(meh)
+   36         28125.000100 to         28906.249900 Hz:             0.000002 *(meh)
+   37         28906.250100 to         29687.499900 Hz:             0.000002 *(meh)
+   38         29687.500100 to         30468.749900 Hz:             0.000002 *(meh)
+   39         30468.750100 to         31249.999900 Hz:             0.000003 *(meh)
+   40         31250.000100 to         32031.249900 Hz:             0.000003 *(meh)
+   41         32031.250100 to         32812.499900 Hz:             0.000003 *(meh)
+   42         32812.500100 to         33593.749900 Hz:             0.000003 *(meh)
+   43         33593.750100 to         34374.999900 Hz:             0.000004 *(meh)
+   44         34375.000100 to         35156.249900 Hz:             0.000004 *(meh)
+   45         35156.250100 to         35937.499900 Hz:             0.000004 *(meh)
+   46         35937.500100 to         36718.749900 Hz:             0.000004 *(meh)
+   47         36718.750100 to         37499.999900 Hz:             0.000005 *(meh)
+   48         37500.000100 to         38281.249900 Hz:             0.000005 *(meh)
+   49         38281.250100 to         39062.499900 Hz:             0.000005 *(meh)
+   50         39062.500100 to         39843.749900 Hz:             0.000005 *(meh)
+   51         39843.750100 to         40624.999900 Hz:             0.000005 *(meh)
+   52         40625.000100 to         41406.249900 Hz:             0.000005 *(meh)
+   53         41406.250100 to         42187.499900 Hz:             0.000005 *(meh)
+   54         42187.500100 to         42968.749900 Hz:             0.000004 *(meh)
+   55         42968.750100 to         43749.999900 Hz:             0.000004 *(meh)
+   56         43750.000100 to         44531.249900 Hz:             0.000004 *(meh)
+   57         44531.250100 to         45312.499900 Hz:             0.000003 *(meh)
+   58         45312.500100 to         46093.749900 Hz:             0.000003 *(meh)
+   59         46093.750100 to         46874.999900 Hz:             0.000003 *(meh)
+   60         46875.000100 to         47656.249900 Hz:             0.000003 *(meh)
+   61         47656.250100 to         48437.499900 Hz:             0.000004 *(meh)
+   62         48437.500100 to         49218.749900 Hz:             0.000005 *(meh)
+   63         49218.750100 to         49999.999900 Hz:             0.000007 *(meh)
+   64         50000.000100 to         50781.249900 Hz:             0.000011 *(meh)
+
+   65         50781.250100 to         51562.499900 Hz:             0.000017 *(meh)
+
+   66         51562.500100 to         52343.749900 Hz:             0.000026 *(meh)
+
+   67         52343.750100 to         53124.999900 Hz:             0.000039 **(meh)
+
+   68         53125.000100 to         53906.249900 Hz:             0.000056 **(meh)
+
+   69         53906.250100 to         54687.499900 Hz:             0.000078 ***(meh)
+
+   70         54687.500100 to         55468.749900 Hz:             0.000106 ****(meh)
+
+   71         55468.750100 to         56249.999900 Hz:             0.000140 *****(meh)
+
+   72         56250.000100 to         57031.249900 Hz:             0.000182 ******(meh)
+
+   73         57031.250100 to         57812.499900 Hz:             0.000232 ********(WOW)
+
+   74         57812.500100 to         58593.749900 Hz:             0.000289 *********(WOW)
+
+   75         58593.750100 to         59374.999900 Hz:             0.000354 ***********(WOW)
+
+   76         59375.000100 to         60156.249900 Hz:             0.000426 **************(WOW)
+
+   77         60156.250100 to         60937.499900 Hz:             0.000505 ****************(WOW)
+
+   78         60937.500100 to         61718.749900 Hz:             0.000589 *******************(WOW)
+
+   79         61718.750100 to         62499.999900 Hz:             0.000677 *********************(WOW)
+
+   80         62500.000100 to         63281.249900 Hz:             0.000767 ************************(WOW)
+
+   81         63281.250100 to         64062.499900 Hz:             0.000856 ***************************(WOW)
+
+   82         64062.500100 to         64843.749900 Hz:             0.000943 ******************************(WOW)
+
+   83         64843.750100 to         65624.999900 Hz:             0.001025 ********************************(WOW)
+
+   84         65625.000100 to         66406.249900 Hz:             0.001100 **********************************(WOW)
+
+   85         66406.250100 to         67187.499900 Hz:             0.001165 ************************************(WOW)
+
+   86         67187.500100 to         67968.749900 Hz:             0.001219 **************************************(WOW)
+
+   87         67968.750100 to         68749.999900 Hz:             0.001259 ***************************************(WOW)
+
+   88         68750.000100 to         69531.249900 Hz:             0.001285 ****************************************(WOW)
+
+   89         69531.250100 to         70312.499900 Hz:             0.001295 ****************************************(WOW)
+
+   90         70312.500100 to         71093.749900 Hz:             0.001289 ****************************************(WOW)
+
+   91         71093.750100 to         71874.999900 Hz:             0.001268 ****************************************(WOW)
+
+   92         71875.000100 to         72656.249900 Hz:             0.001231 ***************************************(WOW)
+
+   93         72656.250100 to         73437.499900 Hz:             0.001181 *************************************(WOW)
+
+   94         73437.500100 to         74218.749900 Hz:             0.001118 ***********************************(WOW)
+
+   95         74218.750100 to         74999.999900 Hz:             0.001045 *********************************(WOW)
+
+   96         75000.000100 to         75781.249900 Hz:             0.000964 ******************************(WOW)
+
+   97         75781.250100 to         76562.499900 Hz:             0.000878 ****************************(WOW)
+
+   98         76562.500100 to         77343.749900 Hz:             0.000788 *************************(WOW)
+
+   99         77343.750100 to         78124.999900 Hz:             0.000698 **********************(WOW)
+
+  100         78125.000100 to         78906.249900 Hz:             0.000609 *******************(WOW)
+
+  101         78906.250100 to         79687.499900 Hz:             0.000523 *****************(WOW)
+
+  102         79687.500100 to         80468.749900 Hz:             0.000443 **************(WOW)
+
+  103         80468.750100 to         81249.999900 Hz:             0.000368 ************(WOW)
+
+  104         81250.000100 to         82031.249900 Hz:             0.000301 **********(WOW)
+
+  105         82031.250100 to         82812.499900 Hz:             0.000242 ********(WOW)
+
+  106         82812.500100 to         83593.749900 Hz:             0.000190 ******(meh)
+
+  107         83593.750100 to         84374.999900 Hz:             0.000147 *****(meh)
+
+  108         84375.000100 to         85156.249900 Hz:             0.000111 ****(meh)
+
+  109         85156.250100 to         85937.499900 Hz:             0.000081 ***(meh)
+
+  110         85937.500100 to         86718.749900 Hz:             0.000058 **(meh)
+
+  111         86718.750100 to         87499.999900 Hz:             0.000040 **(meh)
+
+  112         87500.000100 to         88281.249900 Hz:             0.000027 *(meh)
+
+  113         88281.250100 to         89062.499900 Hz:             0.000017 *(meh)
+
+  114         89062.500100 to         89843.749900 Hz:             0.000011 *(meh)
+
+  115         89843.750100 to         90624.999900 Hz:             0.000006 *(meh)
+
+  116         90625.000100 to         91406.249900 Hz:             0.000003 *(meh)
+
+  117         91406.250100 to         92187.499900 Hz:             0.000002 *(meh)
+
+  118         92187.500100 to         92968.749900 Hz:             0.000001 *(meh)
+
+  119         92968.750100 to         93749.999900 Hz:             0.000000 *(meh)
+
+  120         93750.000100 to         94531.249900 Hz:             0.000000 *(meh)
+
+  121         94531.250100 to         95312.499900 Hz:             0.000000 *(meh)
+
+  122         95312.500100 to         96093.749900 Hz:             0.000000 *(meh)
+
+  123         96093.750100 to         96874.999900 Hz:             0.000000 *(meh)
+
+  124         96875.000100 to         97656.249900 Hz:             0.000000 *(meh)
+
+  125         97656.250100 to         98437.499900 Hz:             0.000000 *(meh)
+
+  126         98437.500100 to         99218.749900 Hz:             0.000000 *(meh)
+
+  127         99218.750100 to         99999.999900 Hz:             0.000000 *(meh)
+
+  128        100000.000100 to        100781.249900 Hz:             0.000000 *(meh)
+
+  129        100781.250100 to        101562.499900 Hz:             0.000000 *(meh)
+
+  130        101562.500100 to        102343.749900 Hz:             0.000000 *(meh)
+
+  131        102343.750100 to        103124.999900 Hz:             0.000000 *(meh)
+
+  132        103125.000100 to        103906.249900 Hz:             0.000000 *(meh)
+
+  133        103906.250100 to        104687.499900 Hz:             0.000000 *(meh)
+
+  134        104687.500100 to        105468.749900 Hz:             0.000000 *(meh)
+
+  135        105468.750100 to        106249.999900 Hz:             0.000000 *(meh)
+
+  136        106250.000100 to        107031.249900 Hz:             0.000000 *(meh)
+
+  137        107031.250100 to        107812.499900 Hz:             0.000000 *(meh)
+
+  138        107812.500100 to        108593.749900 Hz:             0.000000 *(meh)
+
+  139        108593.750100 to        109374.999900 Hz:             0.000000 *(meh)
+
+  140        109375.000100 to        110156.249900 Hz:             0.000000 *(meh)
+
+  141        110156.250100 to        110937.499900 Hz:             0.000000 *(meh)
+
+  142        110937.500100 to        111718.749900 Hz:             0.000000 *(meh)
+
+  143        111718.750100 to        112499.999900 Hz:             0.000000 *(meh)
+
+  144        112500.000100 to        113281.249900 Hz:             0.000000 *(meh)
+
+  145        113281.250100 to        114062.499900 Hz:             0.000000 *(meh)
+
+  146        114062.500100 to        114843.749900 Hz:             0.000000 *(meh)
+
+  147        114843.750100 to        115624.999900 Hz:             0.000000 *(meh)
+
+  148        115625.000100 to        116406.249900 Hz:             0.000000 *(meh)
+
+  149        116406.250100 to        117187.499900 Hz:             0.000000 *(meh)
+
+  150        117187.500100 to        117968.749900 Hz:             0.000000 *(meh)
+
+  151        117968.750100 to        118749.999900 Hz:             0.000000 *(meh)
+
+  152        118750.000100 to        119531.249900 Hz:             0.000000 *(meh)
+
+  153        119531.250100 to        120312.499900 Hz:             0.000000 *(meh)
+
+  154        120312.500100 to        121093.749900 Hz:             0.000000 *(meh)
+
+  155        121093.750100 to        121874.999900 Hz:             0.000000 *(meh)
+
+  156        121875.000100 to        122656.249900 Hz:             0.000000 *(meh)
+
+  157        122656.250100 to        123437.499900 Hz:             0.000000 *(meh)
+
+  158        123437.500100 to        124218.749900 Hz:             0.000000 *(meh)
+
+  159        124218.750100 to        124999.999900 Hz:             0.000000 *(meh)
+
+  160        125000.000100 to        125781.249900 Hz:             0.000000 *(meh)
+
+  161        125781.250100 to        126562.499900 Hz:             0.000000 *(meh)
+
+  162        126562.500100 to        127343.749900 Hz:             0.000000 *(meh)
+
+  163        127343.750100 to        128124.999900 Hz:             0.000000 *(meh)
+
+  164        128125.000100 to        128906.249900 Hz:             0.000000 *(meh)
+
+  165        128906.250100 to        129687.499900 Hz:             0.000000 *(meh)
+
+  166        129687.500100 to        130468.749900 Hz:             0.000000 *(meh)
+
+  167        130468.750100 to        131249.999900 Hz:             0.000000 *(meh)
+
+  168        131250.000100 to        132031.249900 Hz:             0.000000 *(meh)
+
+  169        132031.250100 to        132812.499900 Hz:             0.000000 *(meh)
+
+  170        132812.500100 to        133593.749900 Hz:             0.000000 *(meh)
+
+  171        133593.750100 to        134374.999900 Hz:             0.000000 *(meh)
+
+  172        134375.000100 to        135156.249900 Hz:             0.000000 *(meh)
+
+  173        135156.250100 to        135937.499900 Hz:             0.000000 *(meh)
+
+  174        135937.500100 to        136718.749900 Hz:             0.000000 *(meh)
+
+  175        136718.750100 to        137499.999900 Hz:             0.000000 *(meh)
+
+  176        137500.000100 to        138281.249900 Hz:             0.000000 *(meh)
+
+  177        138281.250100 to        139062.499900 Hz:             0.000000 *(meh)
+
+  178        139062.500100 to        139843.749900 Hz:             0.000000 *(meh)
+
+  179        139843.750100 to        140624.999900 Hz:             0.000000 *(meh)
+
+  180        140625.000100 to        141406.249900 Hz:             0.000000 *(meh)
+
+  181        141406.250100 to        142187.499900 Hz:             0.000000 *(meh)
+
+  182        142187.500100 to        142968.749900 Hz:             0.000000 *(meh)
+
+  183        142968.750100 to        143749.999900 Hz:             0.000000 *(meh)
+
+  184        143750.000100 to        144531.249900 Hz:             0.000000 *(meh)
+
+  185        144531.250100 to        145312.499900 Hz:             0.000000 *(meh)
+
+  186        145312.500100 to        146093.749900 Hz:             0.000000 *(meh)
+
+  187        146093.750100 to        146874.999900 Hz:             0.000000 *(meh)
+
+  188        146875.000100 to        147656.249900 Hz:             0.000000 *(meh)
+
+  189        147656.250100 to        148437.499900 Hz:             0.000000 *(meh)
+
+  190        148437.500100 to        149218.749900 Hz:             0.000000 *(meh)
+
+  191        149218.750100 to        149999.999900 Hz:             0.000000 *(meh)
+
+  192        150000.000100 to        150781.249900 Hz:             0.000000 *(meh)
+  193        150781.250100 to        151562.499900 Hz:             0.000000 *(meh)
+  194        151562.500100 to        152343.749900 Hz:             0.000000 *(meh)
+  195        152343.750100 to        153124.999900 Hz:             0.000000 *(meh)
+  196        153125.000100 to        153906.249900 Hz:             0.000000 *(meh)
+  197        153906.250100 to        154687.499900 Hz:             0.000000 *(meh)
+  198        154687.500100 to        155468.749900 Hz:             0.000000 *(meh)
+  199        155468.750100 to        156249.999900 Hz:             0.000000 *(meh)
+  200        156250.000100 to        157031.249900 Hz:             0.000000 *(meh)
+  201        157031.250100 to        157812.499900 Hz:             0.000000 *(meh)
+  202        157812.500100 to        158593.749900 Hz:             0.000000 *(meh)
+  203        158593.750100 to        159374.999900 Hz:             0.000000 *(meh)
+  204        159375.000100 to        160156.249900 Hz:             0.000000 *(meh)
+  205        160156.250100 to        160937.499900 Hz:             0.000000 *(meh)
+  206        160937.500100 to        161718.749900 Hz:             0.000000 *(meh)
+  207        161718.750100 to        162499.999900 Hz:             0.000000 *(meh)
+  208        162500.000100 to        163281.249900 Hz:             0.000000 *(meh)
+  209        163281.250100 to        164062.499900 Hz:             0.000000 *(meh)
+  210        164062.500100 to        164843.749900 Hz:             0.000000 *(meh)
+  211        164843.750100 to        165624.999900 Hz:             0.000000 *(meh)
+  212        165625.000100 to        166406.249900 Hz:             0.000000 *(meh)
+  213        166406.250100 to        167187.499900 Hz:             0.000000 *(meh)
+  214        167187.500100 to        167968.749900 Hz:             0.000000 *(meh)
+  215        167968.750100 to        168749.999900 Hz:             0.000000 *(meh)
+  216        168750.000100 to        169531.249900 Hz:             0.000000 *(meh)
+  217        169531.250100 to        170312.499900 Hz:             0.000000 *(meh)
+  218        170312.500100 to        171093.749900 Hz:             0.000000 *(meh)
+  219        171093.750100 to        171874.999900 Hz:             0.000000 *(meh)
+  220        171875.000100 to        172656.249900 Hz:             0.000000 *(meh)
+  221        172656.250100 to        173437.499900 Hz:             0.000000 *(meh)
+  222        173437.500100 to        174218.749900 Hz:             0.000000 *(meh)
+  223        174218.750100 to        174999.999900 Hz:             0.000000 *(meh)
+  224        175000.000100 to        175781.249900 Hz:             0.000000 *(meh)
+  225        175781.250100 to        176562.499900 Hz:             0.000000 *(meh)
+  226        176562.500100 to        177343.749900 Hz:             0.000000 *(meh)
+  227        177343.750100 to        178124.999900 Hz:             0.000000 *(meh)
+  228        178125.000100 to        178906.249900 Hz:             0.000000 *(meh)
+  229        178906.250100 to        179687.499900 Hz:             0.000000 *(meh)
+  230        179687.500100 to        180468.749900 Hz:             0.000000 *(meh)
+  231        180468.750100 to        181249.999900 Hz:             0.000000 *(meh)
+  232        181250.000100 to        182031.249900 Hz:             0.000000 *(meh)
+  233        182031.250100 to        182812.499900 Hz:             0.000000 *(meh)
+  234        182812.500100 to        183593.749900 Hz:             0.000000 *(meh)
+  235        183593.750100 to        184374.999900 Hz:             0.000000 *(meh)
+  236        184375.000100 to        185156.249900 Hz:             0.000000 *(meh)
+  237        185156.250100 to        185937.499900 Hz:             0.000000 *(meh)
+  238        185937.500100 to        186718.749900 Hz:             0.000000 *(meh)
+  239        186718.750100 to        187499.999900 Hz:             0.000000 *(meh)
+  240        187500.000100 to        188281.249900 Hz:             0.000000 *(meh)
+  241        188281.250100 to        189062.499900 Hz:             0.000000 *(meh)
+  242        189062.500100 to        189843.749900 Hz:             0.000000 *(meh)
+  243        189843.750100 to        190624.999900 Hz:             0.000000 *(meh)
+  244        190625.000100 to        191406.249900 Hz:             0.000000 *(meh)
+  245        191406.250100 to        192187.499900 Hz:             0.000000 *(meh)
+  246        192187.500100 to        192968.749900 Hz:             0.000000 *(meh)
+  247        192968.750100 to        193749.999900 Hz:             0.000000 *(meh)
+  248        193750.000100 to        194531.249900 Hz:             0.000000 *(meh)
+  249        194531.250100 to        195312.499900 Hz:             0.000000 *(meh)
+  250        195312.500100 to        196093.749900 Hz:             0.000000 *(meh)
+  251        196093.750100 to        196874.999900 Hz:             0.000000 *(meh)
+  252        196875.000100 to        197656.249900 Hz:             0.000000 *(meh)
+  253        197656.250100 to        198437.499900 Hz:             0.000000 *(meh)
+  254        198437.500100 to        199218.749900 Hz:             0.000000 *(meh)
+  255        199218.750100 to        199999.999900 Hz:             0.000000 *(meh)
+Resource usages (all threads):
+User time        537.634772 seconds
+System time      0.101992 seconds
+Page faults      15865
+Page swaps       0
+Blocks of I/O    0
+Signals caught   0
+Context switches 293
+Analysis took 34.034290 seconds
+POSSIBLE ALIENS 57031.250100-82812.499900 HZ (CENTER 69921.875000 HZ)
+537.77user 0.15system 0:34.23elapsed 1571%CPU (0avgtext+0avgdata 96548maxresident)k
+0inputs+0outputs (0major+16389minor)pagefaults 0swaps
+amdahl-1 32 256 16 16: Our time: 34230
+/home/arw5546/cs213/setilab/setilab-handout/.tmp.gdfCazgSAz/p_band_scan bin /home/cs213lab/www/meta/arw5546-mdq5477.sig/tmp-3509.sig 400000 32 256 32 32
+type:     Binary
+        file:     /home/cs213lab/www/meta/arw5546-mdq5477.sig/tmp-3509.sig
+        Fs:       400000.000000 Hz
+        order:    32
+        bands:    256
+        procs:    32
+        threads:  32
+Load or map file
+Read 12000000 samples
+Removing DC component of 0.002699
+signal average power:     1.156557
+    0             0.000100 to           781.249900 Hz:             0.000024 *(meh)
+    1           781.250100 to          1562.499900 Hz:             0.000024 *(meh)
+    2          1562.500100 to          2343.749900 Hz:             0.000024 *(meh)
+    3          2343.750100 to          3124.999900 Hz:             0.000023 *(meh)
+    4          3125.000100 to          3906.249900 Hz:             0.000022 *(meh)
+    5          3906.250100 to          4687.499900 Hz:             0.000022 *(meh)
+    6          4687.500100 to          5468.749900 Hz:             0.000021 *(meh)
+    7          5468.750100 to          6249.999900 Hz:             0.000020 *(meh)
+    8          6250.000100 to          7031.249900 Hz:             0.000019 *(meh)
+    9          7031.250100 to          7812.499900 Hz:             0.000018 *(meh)
+   10          7812.500100 to          8593.749900 Hz:             0.000017 *(meh)
+   11          8593.750100 to          9374.999900 Hz:             0.000016 *(meh)
+   12          9375.000100 to         10156.249900 Hz:             0.000015 *(meh)
+   13         10156.250100 to         10937.499900 Hz:             0.000015 *(meh)
+   14         10937.500100 to         11718.749900 Hz:             0.000014 *(meh)
+   15         11718.750100 to         12499.999900 Hz:             0.000013 *(meh)
+   16         12500.000100 to         13281.249900 Hz:             0.000012 *(meh)
+   17         13281.250100 to         14062.499900 Hz:             0.000012 *(meh)
+   18         14062.500100 to         14843.749900 Hz:             0.000011 *(meh)
+   19         14843.750100 to         15624.999900 Hz:             0.000010 *(meh)
+   20         15625.000100 to         16406.249900 Hz:             0.000010 *(meh)
+   21         16406.250100 to         17187.499900 Hz:             0.000009 *(meh)
+   22         17187.500100 to         17968.749900 Hz:             0.000008 *(meh)
+   23         17968.750100 to         18749.999900 Hz:             0.000008 *(meh)
+   24         18750.000100 to         19531.249900 Hz:             0.000007 *(meh)
+   25         19531.250100 to         20312.499900 Hz:             0.000006 *(meh)
+   26         20312.500100 to         21093.749900 Hz:             0.000006 *(meh)
+   27         21093.750100 to         21874.999900 Hz:             0.000005 *(meh)
+   28         21875.000100 to         22656.249900 Hz:             0.000004 *(meh)
+   29         22656.250100 to         23437.499900 Hz:             0.000004 *(meh)
+   30         23437.500100 to         24218.749900 Hz:             0.000003 *(meh)
+   31         24218.750100 to         24999.999900 Hz:             0.000003 *(meh)
+   32         25000.000100 to         25781.249900 Hz:             0.000003 *(meh)
+   33         25781.250100 to         26562.499900 Hz:             0.000002 *(meh)
+   34         26562.500100 to         27343.749900 Hz:             0.000002 *(meh)
+   35         27343.750100 to         28124.999900 Hz:             0.000002 *(meh)
+   36         28125.000100 to         28906.249900 Hz:             0.000002 *(meh)
+   37         28906.250100 to         29687.499900 Hz:             0.000002 *(meh)
+   38         29687.500100 to         30468.749900 Hz:             0.000002 *(meh)
+   39         30468.750100 to         31249.999900 Hz:             0.000003 *(meh)
+   40         31250.000100 to         32031.249900 Hz:             0.000003 *(meh)
+   41         32031.250100 to         32812.499900 Hz:             0.000003 *(meh)
+   42         32812.500100 to         33593.749900 Hz:             0.000003 *(meh)
+   43         33593.750100 to         34374.999900 Hz:             0.000004 *(meh)
+   44         34375.000100 to         35156.249900 Hz:             0.000004 *(meh)
+   45         35156.250100 to         35937.499900 Hz:             0.000004 *(meh)
+   46         35937.500100 to         36718.749900 Hz:             0.000004 *(meh)
+   47         36718.750100 to         37499.999900 Hz:             0.000005 *(meh)
+   48         37500.000100 to         38281.249900 Hz:             0.000005 *(meh)
+   49         38281.250100 to         39062.499900 Hz:             0.000005 *(meh)
+   50         39062.500100 to         39843.749900 Hz:             0.000005 *(meh)
+   51         39843.750100 to         40624.999900 Hz:             0.000005 *(meh)
+   52         40625.000100 to         41406.249900 Hz:             0.000005 *(meh)
+   53         41406.250100 to         42187.499900 Hz:             0.000005 *(meh)
+   54         42187.500100 to         42968.749900 Hz:             0.000004 *(meh)
+   55         42968.750100 to         43749.999900 Hz:             0.000004 *(meh)
+   56         43750.000100 to         44531.249900 Hz:             0.000004 *(meh)
+   57         44531.250100 to         45312.499900 Hz:             0.000003 *(meh)
+   58         45312.500100 to         46093.749900 Hz:             0.000003 *(meh)
+   59         46093.750100 to         46874.999900 Hz:             0.000003 *(meh)
+   60         46875.000100 to         47656.249900 Hz:             0.000003 *(meh)
+   61         47656.250100 to         48437.499900 Hz:             0.000004 *(meh)
+   62         48437.500100 to         49218.749900 Hz:             0.000005 *(meh)
+   63         49218.750100 to         49999.999900 Hz:             0.000007 *(meh)
+   64         50000.000100 to         50781.249900 Hz:             0.000011 *(meh)
+   65         50781.250100 to         51562.499900 Hz:             0.000017 *(meh)
+   66         51562.500100 to         52343.749900 Hz:             0.000026 *(meh)
+   67         52343.750100 to         53124.999900 Hz:             0.000039 **(meh)
+   68         53125.000100 to         53906.249900 Hz:             0.000056 **(meh)
+   69         53906.250100 to         54687.499900 Hz:             0.000078 ***(meh)
+   70         54687.500100 to         55468.749900 Hz:             0.000106 ****(meh)
+   71         55468.750100 to         56249.999900 Hz:             0.000140 *****(meh)
+   72         56250.000100 to         57031.249900 Hz:             0.000182 ******(meh)
+   73         57031.250100 to         57812.499900 Hz:             0.000232 ********(WOW)
+   74         57812.500100 to         58593.749900 Hz:             0.000289 *********(WOW)
+   75         58593.750100 to         59374.999900 Hz:             0.000354 ***********(WOW)
+   76         59375.000100 to         60156.249900 Hz:             0.000426 **************(WOW)
+   77         60156.250100 to         60937.499900 Hz:             0.000505 ****************(WOW)
+   78         60937.500100 to         61718.749900 Hz:             0.000589 *******************(WOW)
+   79         61718.750100 to         62499.999900 Hz:             0.000677 *********************(WOW)
+   80         62500.000100 to         63281.249900 Hz:             0.000767 ************************(WOW)
+   81         63281.250100 to         64062.499900 Hz:             0.000856 ***************************(WOW)
+   82         64062.500100 to         64843.749900 Hz:             0.000943 ******************************(WOW)
+   83         64843.750100 to         65624.999900 Hz:             0.001025 ********************************(WOW)
+   84         65625.000100 to         66406.249900 Hz:             0.001100 **********************************(WOW)
+   85         66406.250100 to         67187.499900 Hz:             0.001165 ************************************(WOW)
+   86         67187.500100 to         67968.749900 Hz:             0.001219 **************************************(WOW)
+   87         67968.750100 to         68749.999900 Hz:             0.001259 ***************************************(WOW)
+   88         68750.000100 to         69531.249900 Hz:             0.001285 ****************************************(WOW)
+   89         69531.250100 to         70312.499900 Hz:             0.001295 ****************************************(WOW)
+   90         70312.500100 to         71093.749900 Hz:             0.001289 ****************************************(WOW)
+   91         71093.750100 to         71874.999900 Hz:             0.001268 ****************************************(WOW)
+   92         71875.000100 to         72656.249900 Hz:             0.001231 ***************************************(WOW)
+   93         72656.250100 to         73437.499900 Hz:             0.001181 *************************************(WOW)
+   94         73437.500100 to         74218.749900 Hz:             0.001118 ***********************************(WOW)
+   95         74218.750100 to         74999.999900 Hz:             0.001045 *********************************(WOW)
+   96         75000.000100 to         75781.249900 Hz:             0.000964 ******************************(WOW)
+   97         75781.250100 to         76562.499900 Hz:             0.000878 ****************************(WOW)
+   98         76562.500100 to         77343.749900 Hz:             0.000788 *************************(WOW)
+   99         77343.750100 to         78124.999900 Hz:             0.000698 **********************(WOW)
+  100         78125.000100 to         78906.249900 Hz:             0.000609 *******************(WOW)
+  101         78906.250100 to         79687.499900 Hz:             0.000523 *****************(WOW)
+  102         79687.500100 to         80468.749900 Hz:             0.000443 **************(WOW)
+  103         80468.750100 to         81249.999900 Hz:             0.000368 ************(WOW)
+  104         81250.000100 to         82031.249900 Hz:             0.000301 **********(WOW)
+  105         82031.250100 to         82812.499900 Hz:             0.000242 ********(WOW)
+  106         82812.500100 to         83593.749900 Hz:             0.000190 ******(meh)
+  107         83593.750100 to         84374.999900 Hz:             0.000147 *****(meh)
+  108         84375.000100 to         85156.249900 Hz:             0.000111 ****(meh)
+  109         85156.250100 to         85937.499900 Hz:             0.000081 ***(meh)
+  110         85937.500100 to         86718.749900 Hz:             0.000058 **(meh)
+  111         86718.750100 to         87499.999900 Hz:             0.000040 **(meh)
+  112         87500.000100 to         88281.249900 Hz:             0.000027 *(meh)
+  113         88281.250100 to         89062.499900 Hz:             0.000017 *(meh)
+  114         89062.500100 to         89843.749900 Hz:             0.000011 *(meh)
+  115         89843.750100 to         90624.999900 Hz:             0.000006 *(meh)
+  116         90625.000100 to         91406.249900 Hz:             0.000003 *(meh)
+  117         91406.250100 to         92187.499900 Hz:             0.000002 *(meh)
+  118         92187.500100 to         92968.749900 Hz:             0.000001 *(meh)
+  119         92968.750100 to         93749.999900 Hz:             0.000000 *(meh)
+  120         93750.000100 to         94531.249900 Hz:             0.000000 *(meh)
+  121         94531.250100 to         95312.499900 Hz:             0.000000 *(meh)
+  122         95312.500100 to         96093.749900 Hz:             0.000000 *(meh)
+  123         96093.750100 to         96874.999900 Hz:             0.000000 *(meh)
+  124         96875.000100 to         97656.249900 Hz:             0.000000 *(meh)
+  125         97656.250100 to         98437.499900 Hz:             0.000000 *(meh)
+  126         98437.500100 to         99218.749900 Hz:             0.000000 *(meh)
+  127         99218.750100 to         99999.999900 Hz:             0.000000 *(meh)
+  128        100000.000100 to        100781.249900 Hz:             0.000000 *(meh)
+  129        100781.250100 to        101562.499900 Hz:             0.000000 *(meh)
+  130        101562.500100 to        102343.749900 Hz:             0.000000 *(meh)
+  131        102343.750100 to        103124.999900 Hz:             0.000000 *(meh)
+  132        103125.000100 to        103906.249900 Hz:             0.000000 *(meh)
+  133        103906.250100 to        104687.499900 Hz:             0.000000 *(meh)
+  134        104687.500100 to        105468.749900 Hz:             0.000000 *(meh)
+  135        105468.750100 to        106249.999900 Hz:             0.000000 *(meh)
+  136        106250.000100 to        107031.249900 Hz:             0.000000 *(meh)
+  137        107031.250100 to        107812.499900 Hz:             0.000000 *(meh)
+  138        107812.500100 to        108593.749900 Hz:             0.000000 *(meh)
+  139        108593.750100 to        109374.999900 Hz:             0.000000 *(meh)
+  140        109375.000100 to        110156.249900 Hz:             0.000000 *(meh)
+  141        110156.250100 to        110937.499900 Hz:             0.000000 *(meh)
+  142        110937.500100 to        111718.749900 Hz:             0.000000 *(meh)
+  143        111718.750100 to        112499.999900 Hz:             0.000000 *(meh)
+  144        112500.000100 to        113281.249900 Hz:             0.000000 *(meh)
+  145        113281.250100 to        114062.499900 Hz:             0.000000 *(meh)
+  146        114062.500100 to        114843.749900 Hz:             0.000000 *(meh)
+  147        114843.750100 to        115624.999900 Hz:             0.000000 *(meh)
+  148        115625.000100 to        116406.249900 Hz:             0.000000 *(meh)
+  149        116406.250100 to        117187.499900 Hz:             0.000000 *(meh)
+  150        117187.500100 to        117968.749900 Hz:             0.000000 *(meh)
+  151        117968.750100 to        118749.999900 Hz:             0.000000 *(meh)
+  152        118750.000100 to        119531.249900 Hz:             0.000000 *(meh)
+  153        119531.250100 to        120312.499900 Hz:             0.000000 *(meh)
+  154        120312.500100 to        121093.749900 Hz:             0.000000 *(meh)
+  155        121093.750100 to        121874.999900 Hz:             0.000000 *(meh)
+  156        121875.000100 to        122656.249900 Hz:             0.000000 *(meh)
+  157        122656.250100 to        123437.499900 Hz:             0.000000 *(meh)
+  158        123437.500100 to        124218.749900 Hz:             0.000000 *(meh)
+  159        124218.750100 to        124999.999900 Hz:             0.000000 *(meh)
+  160        125000.000100 to        125781.249900 Hz:             0.000000 *(meh)
+  161        125781.250100 to        126562.499900 Hz:             0.000000 *(meh)
+  162        126562.500100 to        127343.749900 Hz:             0.000000 *(meh)
+  163        127343.750100 to        128124.999900 Hz:             0.000000 *(meh)
+  164        128125.000100 to        128906.249900 Hz:             0.000000 *(meh)
+  165        128906.250100 to        129687.499900 Hz:             0.000000 *(meh)
+  166        129687.500100 to        130468.749900 Hz:             0.000000 *(meh)
+  167        130468.750100 to        131249.999900 Hz:             0.000000 *(meh)
+  168        131250.000100 to        132031.249900 Hz:             0.000000 *(meh)
+  169        132031.250100 to        132812.499900 Hz:             0.000000 *(meh)
+  170        132812.500100 to        133593.749900 Hz:             0.000000 *(meh)
+  171        133593.750100 to        134374.999900 Hz:             0.000000 *(meh)
+  172        134375.000100 to        135156.249900 Hz:             0.000000 *(meh)
+  173        135156.250100 to        135937.499900 Hz:             0.000000 *(meh)
+  174        135937.500100 to        136718.749900 Hz:             0.000000 *(meh)
+  175        136718.750100 to        137499.999900 Hz:             0.000000 *(meh)
+  176        137500.000100 to        138281.249900 Hz:             0.000000 *(meh)
+  177        138281.250100 to        139062.499900 Hz:             0.000000 *(meh)
+  178        139062.500100 to        139843.749900 Hz:             0.000000 *(meh)
+  179        139843.750100 to        140624.999900 Hz:             0.000000 *(meh)
+  180        140625.000100 to        141406.249900 Hz:             0.000000 *(meh)
+  181        141406.250100 to        142187.499900 Hz:             0.000000 *(meh)
+  182        142187.500100 to        142968.749900 Hz:             0.000000 *(meh)
+  183        142968.750100 to        143749.999900 Hz:             0.000000 *(meh)
+  184        143750.000100 to        144531.249900 Hz:             0.000000 *(meh)
+  185        144531.250100 to        145312.499900 Hz:             0.000000 *(meh)
+  186        145312.500100 to        146093.749900 Hz:             0.000000 *(meh)
+  187        146093.750100 to        146874.999900 Hz:             0.000000 *(meh)
+  188        146875.000100 to        147656.249900 Hz:             0.000000 *(meh)
+  189        147656.250100 to        148437.499900 Hz:             0.000000 *(meh)
+  190        148437.500100 to        149218.749900 Hz:             0.000000 *(meh)
+  191        149218.750100 to        149999.999900 Hz:             0.000000 *(meh)
+  192        150000.000100 to        150781.249900 Hz:             0.000000 *(meh)
+  193        150781.250100 to        151562.499900 Hz:             0.000000 *(meh)
+  194        151562.500100 to        152343.749900 Hz:             0.000000 *(meh)
+  195        152343.750100 to        153124.999900 Hz:             0.000000 *(meh)
+  196        153125.000100 to        153906.249900 Hz:             0.000000 *(meh)
+  197        153906.250100 to        154687.499900 Hz:             0.000000 *(meh)
+  198        154687.500100 to        155468.749900 Hz:             0.000000 *(meh)
+  199        155468.750100 to        156249.999900 Hz:             0.000000 *(meh)
+  200        156250.000100 to        157031.249900 Hz:             0.000000 *(meh)
+  201        157031.250100 to        157812.499900 Hz:             0.000000 *(meh)
+  202        157812.500100 to        158593.749900 Hz:             0.000000 *(meh)
+  203        158593.750100 to        159374.999900 Hz:             0.000000 *(meh)
+  204        159375.000100 to        160156.249900 Hz:             0.000000 *(meh)
+  205        160156.250100 to        160937.499900 Hz:             0.000000 *(meh)
+  206        160937.500100 to        161718.749900 Hz:             0.000000 *(meh)
+  207        161718.750100 to        162499.999900 Hz:             0.000000 *(meh)
+  208        162500.000100 to        163281.249900 Hz:             0.000000 *(meh)
+  209        163281.250100 to        164062.499900 Hz:             0.000000 *(meh)
+  210        164062.500100 to        164843.749900 Hz:             0.000000 *(meh)
+  211        164843.750100 to        165624.999900 Hz:             0.000000 *(meh)
+  212        165625.000100 to        166406.249900 Hz:             0.000000 *(meh)
+  213        166406.250100 to        167187.499900 Hz:             0.000000 *(meh)
+  214        167187.500100 to        167968.749900 Hz:             0.000000 *(meh)
+  215        167968.750100 to        168749.999900 Hz:             0.000000 *(meh)
+  216        168750.000100 to        169531.249900 Hz:             0.000000 *(meh)
+  217        169531.250100 to        170312.499900 Hz:             0.000000 *(meh)
+  218        170312.500100 to        171093.749900 Hz:             0.000000 *(meh)
+  219        171093.750100 to        171874.999900 Hz:             0.000000 *(meh)
+  220        171875.000100 to        172656.249900 Hz:             0.000000 *(meh)
+  221        172656.250100 to        173437.499900 Hz:             0.000000 *(meh)
+  222        173437.500100 to        174218.749900 Hz:             0.000000 *(meh)
+  223        174218.750100 to        174999.999900 Hz:             0.000000 *(meh)
+  224        175000.000100 to        175781.249900 Hz:             0.000000 *(meh)
+  225        175781.250100 to        176562.499900 Hz:             0.000000 *(meh)
+  226        176562.500100 to        177343.749900 Hz:             0.000000 *(meh)
+  227        177343.750100 to        178124.999900 Hz:             0.000000 *(meh)
+  228        178125.000100 to        178906.249900 Hz:             0.000000 *(meh)
+  229        178906.250100 to        179687.499900 Hz:             0.000000 *(meh)
+  230        179687.500100 to        180468.749900 Hz:             0.000000 *(meh)
+  231        180468.750100 to        181249.999900 Hz:             0.000000 *(meh)
+  232        181250.000100 to        182031.249900 Hz:             0.000000 *(meh)
+  233        182031.250100 to        182812.499900 Hz:             0.000000 *(meh)
+  234        182812.500100 to        183593.749900 Hz:             0.000000 *(meh)
+  235        183593.750100 to        184374.999900 Hz:             0.000000 *(meh)
+  236        184375.000100 to        185156.249900 Hz:             0.000000 *(meh)
+  237        185156.250100 to        185937.499900 Hz:             0.000000 *(meh)
+  238        185937.500100 to        186718.749900 Hz:             0.000000 *(meh)
+  239        186718.750100 to        187499.999900 Hz:             0.000000 *(meh)
+  240        187500.000100 to        188281.249900 Hz:             0.000000 *(meh)
+  241        188281.250100 to        189062.499900 Hz:             0.000000 *(meh)
+  242        189062.500100 to        189843.749900 Hz:             0.000000 *(meh)
+  243        189843.750100 to        190624.999900 Hz:             0.000000 *(meh)
+  244        190625.000100 to        191406.249900 Hz:             0.000000 *(meh)
+  245        191406.250100 to        192187.499900 Hz:             0.000000 *(meh)
+  246        192187.500100 to        192968.749900 Hz:             0.000000 *(meh)
+  247        192968.750100 to        193749.999900 Hz:             0.000000 *(meh)
+  248        193750.000100 to        194531.249900 Hz:             0.000000 *(meh)
+  249        194531.250100 to        195312.499900 Hz:             0.000000 *(meh)
+  250        195312.500100 to        196093.749900 Hz:             0.000000 *(meh)
+  251        196093.750100 to        196874.999900 Hz:             0.000000 *(meh)
+  252        196875.000100 to        197656.249900 Hz:             0.000000 *(meh)
+  253        197656.250100 to        198437.499900 Hz:             0.000000 *(meh)
+  254        198437.500100 to        199218.749900 Hz:             0.000000 *(meh)
+  255        199218.750100 to        199999.999900 Hz:             0.000000 *(meh)
+Resource usages:
+         User time        307.349535 seconds
+         System time      0.039273 seconds
+         Page faults      3852
+         Page swaps       0
+         Blocks of I/O    0
+         Signals caught   0
+         Context switches 127
+timing overhead is at least 65 cycles
+Analysis took 12728608919 cycles (4.557575 seconds) by cycle count, timing overhead=65 cycles
+Note that cycle count only makes sense if the thread stayed on one core
+Analysis took 9.813881 seconds by basic timing
+POSSIBLE ALIENS 57031.250100-82812.499900 HZ (CENTER 69921.875000 HZ)
+307.38user 0.09system 0:09.91elapsed 3101%CPU (0avgtext+0avgdata 100892maxresident)k
+0inputs+0outputs (0major+4901minor)pagefaults 0swaps
+amdahl-1 32 256 32 32: Their time: 9910
+/home/cs213lab/HANDOUT/p_band_scan bin /home/cs213lab/www/meta/arw5546-mdq5477.sig/tmp-3509.sig 400000 32 256 32 32

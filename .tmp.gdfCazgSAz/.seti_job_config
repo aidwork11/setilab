@@ -1,0 +1,6 @@
+declare -x KEEP_SLURM_WORK_DIR=false
+declare -x RENAMED_WORK_DIR_PATH=/home/arw5546/cs213/setilab/setilab-handout/seti-run-$SLURM_JOB_ID-eval-2025-02-28T20:45:34-06:00
+declare -x SETI_GOLDEN_DIR=/home/cs213lab/seti-scripts-slurm
+declare -x SETI_HANDOUT_DIR=/home/cs213lab/HANDOUT
+declare -x PERL5LIB=/home/cs213lab/seti-scripts-slurm
+declare -x SETI_EVAL_TO_RUN='/home/cs213lab/seti-scripts-slurm/seti-eval -n "arw5546-mdq5477" -t "1" -k e38f08dd9c909098f990892aefffb1eb -a 0'
